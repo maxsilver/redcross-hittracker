@@ -1,15 +1,7 @@
 @import "compass"
 
-table.press_releases
+table.press_releases, table.reporters, table.media_outlets
   width: auto
-
-  th
-    &.title
-      width:  476px
-    &.released_on
-      width:  230px
-    &.tags
-      width:  230px
 
   tr
     &.filters
@@ -25,12 +17,31 @@ table.press_releases
       padding: 10px
       &:first-child
         +border-radius(3px 0 0 3px)
+      &:last-child
+        +border-radius(0 3px 3px 0)
+        input
+          width: 208px
+
+
+table.press_releases
+  width: auto
+
+  th
+    &.title
+      width:  476px
+    &.released_on
+      width:  230px
+    &.tags
+      width:  230px
+
+  tr
+    td
+      &.title
         input
           width: 454px
       &.released_on
         input
           width: 93px
-      &:last-child
-        +border-radius(0 3px 3px 0)
+      &.tags
         input
           width: 208px
