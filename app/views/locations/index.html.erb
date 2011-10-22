@@ -18,8 +18,8 @@
     <table class="chapters">
       <tbody>
         <% region.chapters.each do |chapter| %>
-        <tr class="chapter">
-          <td class="name"><%= chapter.name %></td>
+        <tr class="chapter <%= cycle :even, :odd %>">
+          <td class="name"><%= link_to chapter.name, edit_chapter_path(chapter) %></td>
           <td class="count"><%= chapter.hits.during(@date_range).count %></td>
         </tr>
         <% end %>
