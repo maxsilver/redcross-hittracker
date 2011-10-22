@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'kronic'
 gem 'acts-as-taggable-on'
+gem 'permanent_records'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
