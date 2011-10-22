@@ -5,7 +5,9 @@ class TagsController < ApplicationController
   
   def index
     if params[:q]
-      respond_with(@tags = ActsAsTaggableOn::Tag.named_like(params[:q]))
+      data = ActsAsTaggableOn::Tag.named_like(params[:q])
+      data << params[:q].split(" ").collect {|tag_name| ActsAsTaggableOn::Tag.new(:name => tag_name) }
+      respond_with(@tags = data.first)
     else
       respond_with(@chapters = ActsAsTaggableOn::Tag.all)
     end

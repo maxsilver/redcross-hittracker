@@ -39,6 +39,7 @@ $(function() {
   $("input.press_release").tokenInput("/press_releases.json", {
     theme: "facebook",
     tokenLimit: 1,
+    propertyToSearch: "title",
     minChars: 0
   });
   
