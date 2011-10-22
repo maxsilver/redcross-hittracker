@@ -11,7 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022002346) do
+ActiveRecord::Schema.define(:version => 20111022020518) do
+
+  create_table "hits", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "media_outlet_id"
+    t.integer  "chapter_id"
+    t.text     "content"
+    t.integer  "reporter_id"
+    t.date     "reported_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "media_outlets", :force => true do |t|
+    t.string   "name"
+    t.string   "media_type"
+    t.string   "contact_name"
+    t.string   "contact_phone"
+    t.integer  "coverage_area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "press_releases", :force => true do |t|
+    t.string   "title"
+    t.date     "released_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reporters", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "fax"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

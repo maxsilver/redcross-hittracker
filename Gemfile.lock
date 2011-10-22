@@ -47,6 +47,7 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
+    diff-lcs (1.1.2)
     erubis (2.7.0)
     eventmachine (0.12.10)
     execjs (1.2.9)
@@ -107,6 +108,19 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.6.0)
     ruby-debug-base19 (0.11.25)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -157,6 +171,8 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.1.1)
+  rspec
+  rspec-rails
   ruby-debug19
   sass-rails (~> 3.1.4)
   thin

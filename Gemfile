@@ -18,6 +18,7 @@ group :development do
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
-group :test do
-
+group :developement, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
 end
