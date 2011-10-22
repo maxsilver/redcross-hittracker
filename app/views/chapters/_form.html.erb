@@ -1,0 +1,16 @@
+<%= form_for chapter do |f| %>
+
+  <div class="errors">
+    <%= chapter.errors.full_messages %>
+  </div>
+  
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= link_to "cancel" %>
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
