@@ -5,8 +5,7 @@
   </thead>
   <tbody>
     <tr class="filters">
-      <td class="name"><%= text_field_tag :name, nil, :placeholder => "All Users" %></td>
-      <td></td>
+      <td colspan="2" class="name"><%= text_field_tag :name, nil, :placeholder => "All Users" %></td>
     </tr>
     <% @users.each do |user| %>
     <tr class="<%= cycle :even, :odd %>">

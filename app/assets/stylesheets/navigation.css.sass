@@ -34,21 +34,21 @@ nav
     .title
       +float-left
       width: 120px
-      border: 1px solid darken(#64a0ca, 5%)
+      border: 1px solid darken(#64a0c8, 5%)
       +border-radius(5px 0 0 5px)
-      +linear-gradient(#64a0ca 56%, lighten(#64a0ca, 10%) 11%)      
+      +linear-gradient(#64a0c8 56%, lighten(#64a0c8, 10%) 11%)      
       display: block
       text-decoration: none
       color: #fff
       padding: 10px
 
       &:hover
-        +linear-gradient(lighten(#64a0ca, 10%) 56%, #64a0ca 11%)
+        +linear-gradient(lighten(#64a0c8, 10%) 56%, #64a0c8 11%)
         
       &:active
-        +box-shadow(darken(#64a0ca, 20%), 0, 0, 4px, 4px, true)
+        +box-shadow(darken(#64a0c8, 20%), 0, 0, 4px, 4px, true)
         background-image: none
-        background-color: darken(#64a0ca, 10%)
+        background-color: darken(#64a0c8, 10%)
       
       &.selected
         background-image: none
@@ -60,9 +60,9 @@ nav
       display: block
       width: 39px
       padding: 6px 0
-      +linear-gradient(darken(#64a0ca, 10%) 56%, lighten(#64a0ca, 0%) 11%)      
+      +linear-gradient(darken(#64a0c8, 10%) 56%, lighten(#64a0c8, 0%) 11%)      
       +border-radius(0 5px 5px 0)
-      border: 1px solid darken(#64a0ca, 5%)
+      border: 1px solid darken(#64a0c8, 5%)
       border-left: 0
       text-align: center
       text-decoration: none
@@ -72,18 +72,63 @@ nav
       font-weight: bold
 
       &:hover
-        +linear-gradient(lighten(#64a0ca, 0%) 56%, darken(#64a0ca, 10%) 11%)
+        +linear-gradient(lighten(#64a0c8, 0%) 56%, darken(#64a0c8, 10%) 11%)
         
       &:active
-        +box-shadow(darken(#64a0ca, 20%), 0, 0, 4px, 4px, true)
+        +box-shadow(darken(#64a0c8, 20%), 0, 0, 4px, 4px, true)
         background-image: none
-        background-color: darken(#64a0ca, 10%)
+        background-color: darken(#64a0c8, 10%)
 
       &.selected
         background-image: none
         background-color: #003359
         border-color: #003359
+
+    .new-menu
+      position: absolute
+      right: 0
+      top: 50px
+      width: 180px
+      background-color: #64a0c8
+      border: 1px solid darken(#64a0c8, 10%)
+      +border-radius
+
+      .tip-border, .tip
+        position: absolute
+        top: -15px
+        right: -1px
+        width: 0
+        height: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 15px solid darken(#64a0c8, 10%)
+        border-top: 0
+
+      .tip
+        top: -13px
+        border-bottom-color: #64a0c8
+
+      a
+        position: relative
+        display: block
+        padding: 10px
+        color: #fff
+        text-decoration: none
+        z-index: 1000
+        border-bottom: 1px solid darken(#64a0c8, 10%)
+        
+        &:nth-child(3)
+          +border-radius(5px 5px 0 0)
+
+        &:last-child
+          +border-radius(0 0 5px 5px)
+          border-bottom: 0
       
+        &:hover
+          background-color: #003359
+      
+    
+
 h2
   font-size: 24px
   font-weight: bold

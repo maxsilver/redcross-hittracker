@@ -16,9 +16,15 @@
         <%= link_to "Hits", hits_path, :class => "title #{menu_is_selected('/hits')}" %>
         <%= link_to "+", new_hit_path, :class => "new" %>
       </div>
-      <div>
+      <div class="media">
         <%= link_to "Media", media_path, :class => "title #{menu_is_selected('/media')}" %>
-        <%= link_to "+", new_reporter_path, :class => "new" %>
+        <%= link_to "+", "#", :class => "new" %>
+        <div class="new-menu">
+          <div class="tip-border"></div>
+          <div class="tip"></div>
+          <%= link_to "New Reporter", new_reporter_path %>
+          <%= link_to "New Media Outlet", new_media_outlet_path %>
+        </div>
       </div>
       <div>
         <%= link_to "Press Releases", press_releases_path, :class => "title #{menu_is_selected('/press_releases')}" %>
