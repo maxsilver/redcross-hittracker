@@ -2,6 +2,21 @@ HitTracker::Application.routes.draw do
   devise_for :users
   resources :users
 
+  resources :reporters
+  resources :outlets
+  resources :releases
+  
+  # resources :locations
+  get 'locations' => "locations#index"
+  resources :regions
+  resources :chapters
+  
+  resources :hits
+  
+  get 'media' => "media#index"
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
