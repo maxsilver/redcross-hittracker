@@ -7,22 +7,22 @@ Location INDEX!
     <%= f.text_field :start_time %>
   
     <%= f.label :end_time %>
-    <%= f.text_field :end_time %>  
+    <%= f.text_field :end_time %>
   
     <%= f.submit %>
   <% end %>
 </div>
 
 <div class="regions">
-  <% 2.times do |i| %>
+  <% @regions.each do |region| %>
     <div class="region">
       <h3>
-        Region <span class="number"><%= i%></span>
+        Region <span class="number"><%= region.hits.count %></span>
       </h3>
       <ul>
-        <li>Chart 1</li>
-        <li>Chart 2</li>
-        <li>Chart 3</li>
+        <% region.chapters.each do |chapter| %>
+        <li><%= chapter.name %><%= chapter.hits.count %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

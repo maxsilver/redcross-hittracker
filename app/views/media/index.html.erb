@@ -14,22 +14,26 @@ Media INDEX!
 </div>
 
 <h3>Reporters</h3>
+  <%= link_to "New Reporter", new_reporter_path %>
 <ul class="reporters">
-  <% 5.times do |i| %>
+
+  
+  <% @reporters.each do |reporter| %>
     <li>
-      <span class="name">Name</span>
-      <span class="count"><%= i %></span>
+      <span class="name"><%= link_to reporter.name, edit_reporter_path(reporter) %></span>
+      <span class="count"><%= reporter.hits.count %></span>
       <span class="button"><a href="arrow">=></a></span>
     </li>
   <% end %>
 </ul>
 
 <h3>Outlets</h3>
-<ul class="outlets">
-  <% 5.times do |i| %>
+  <%= link_to "New Media Outlet", new_media_outlet_path %>
+<ul class="media_outlets">
+  <% @media_outlets.each do |media_outlet| %>
     <li>
-      <span class="name">Name</span>
-      <span class="count"><%= i %></span>
+      <span class="name"><%= link_to media_outlet.name, edit_media_outlet_path(media_outlet) %></span>
+      <span class="count"><%= media_outlet.hits.count %></span>
       <span class="button"><a href="arrow">=></a></span>
     </li>
   <% end %>

@@ -4,6 +4,8 @@
     <%= chapter.errors.full_messages %>
   </div>
   
+  <%= f.hidden_field :region_id %>
+  
   <div>
     <%= f.label :name %><br />
     <%= f.text_field :name, :class => "title" %>

@@ -12,7 +12,7 @@ class ChaptersController < ApplicationController
   end
   
   def new
-    @chapter = Chapter.new
+    @chapter = Chapter.new(:region_id => Region.first.id)
   end
   
   def edit
@@ -23,7 +23,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     
     if @chapter.update_attributes(params[:chapter])
-      redirect_to chapters_path, :notice => "Updated successully!"
+      redirect_to locations_path, :notice => "Updated successully!"
     else
       render action: "edit"
     end
@@ -33,7 +33,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.new(params[:chapter])
     
     if @chapter.save
-      redirect_to chapters_path, :notice => "Created successully!"
+      redirect_to locations_path, :notice => "Created successully!"
     else
       render action: "new"
     end

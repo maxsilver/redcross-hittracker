@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022052443) do
+ActiveRecord::Schema.define(:version => 20111022152825) do
 
   create_table "chapters", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "region_id"
   end
 
   create_table "hits", :force => true do |t|
@@ -51,6 +52,12 @@ ActiveRecord::Schema.define(:version => 20111022052443) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reporters", :force => true do |t|

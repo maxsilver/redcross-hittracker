@@ -6,7 +6,7 @@ HitTracker::Application.routes.draw do
 
   get 'media' => "media#index"
   resources :reporters
-  resources :outlets
+  resources :media_outlets
   
   resources :press_releases
   

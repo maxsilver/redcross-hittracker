@@ -1,0 +1,33 @@
+<%= form_for media_outlet do |f| %>
+
+  <div class="errors">
+    <%= media_outlet.errors.full_messages %>
+  </div>
+  
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= f.label :media_type %><br />
+    <%= f.text_field :media_type, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= f.label :contact_name %><br />
+    <%= f.text_field :contact_name, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= f.label :contact_phone %><br />
+    <%= f.text_field :contact_phone, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= link_to "cancel", media_path %>
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
