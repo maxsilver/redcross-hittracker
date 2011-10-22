@@ -29,23 +29,23 @@ $(function() {
   //   theme: "facebook",
   //   preventDuplicates: true
   // });
-  
+
   // $("input.chapter").tokenInput("/chapters.json", {
   //   theme: "facebook",
   //   tokenLimit: 1,
   //   minChars: 0
   // });
-  // 
+  //
   // $("input.press_release").tokenInput("/press_releases.json", {
   //   theme: "facebook",
   //   tokenLimit: 1,
   //   propertyToSearch: "title",
   //   minChars: 0
   // });
-  
+
   $("input.reported_on, input.released_on").datepicker({
     dateFormat: 'yy-mm-dd'
   });
-  
+
   $("table").tablesorter();
 });

@@ -1,15 +1,13 @@
 Media INDEX!
 
 <div>
-  <% form_for :media do |f| %>
+  <%= form_for :media do |f| %>
 
     <span>Time :</span>
-    <%= f.text_field :start_time %>
-  
-    <%= f.label :end_time %>
-    <%= f.text_field :end_time %>  
-  
-    <%= f.submit %>
+    <%= f.text_field :start_time, :class => "datetime" %>
+    <%= f.text_field :end_time, :class => "datetime" %>
+
+    <%= f.submit, "Search" %>
   <% end %>
 </div>
 
@@ -33,4 +31,4 @@ Media INDEX!
       <span class="button"><a href="arrow">=></a></span>
     </li>
   <% end %>
-</ul>  
+</ul>

@@ -1,15 +1,13 @@
 Location INDEX!
 
 <div>
-  <% form_for :locations do |f| %>
+  <%= form_for :locations do |f| %>
 
     <span>Time :</span>
-    <%= f.text_field :start_time %>
-  
-    <%= f.label :end_time %>
-    <%= f.text_field :end_time %>
-  
-    <%= f.submit %>
+    <%= f.text_field :start_time, :class => "datetime" %>
+    <%= f.text_field :end_time, :class => "datetime" %>
+
+    <%= f.submit, "Search" %>
   <% end %>
 </div>
 
@@ -28,4 +26,3 @@ Location INDEX!
   <% end %>
 </div>
 
-  
