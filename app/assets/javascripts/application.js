@@ -32,7 +32,7 @@ $(function() {
     tokenLimit: 1
   });
   
-  $("input.published_on").datepicker({
+  $("input.reported_on").datepicker({
     
   });
 });

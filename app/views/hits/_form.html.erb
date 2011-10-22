@@ -1,17 +1,17 @@
-<%= form_for :hit do |f| %>
+<%= form_for hit do |f| %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   
   <div>
-    <%= f.label :published_on %>
-    <%= f.text_field :published_on, :class => "published_on" %>
+    <%= f.label :reported_on %>
+    <%= f.text_field :reported_on, :class => "reported_on" %>
   </div>
   
   <div>
-    <%= f.label :outlet_id %>
-    <%= f.text_field :outlet_id, :class => "outlet" %>
+    <%= f.label :media_outlet_id %>
+    <%= f.text_field :media_outlet_id, :class => "outlet" %>
   </div>
   
   <div>

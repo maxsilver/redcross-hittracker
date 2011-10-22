@@ -9,5 +9,8 @@ class Hit < ActiveRecord::Base
   has_one :reporter
   has_one :press_release
   has_one :media_outlet
+  has_one :chapter
   belongs_to :user
+  
+  acts_as_taggable
 end
