@@ -2,6 +2,7 @@ class HitsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
+    @hit = Hit.new()
   end
   
   def create

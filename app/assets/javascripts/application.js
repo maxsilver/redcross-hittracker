@@ -27,7 +27,12 @@ $(function() {
     preventDuplicates: true
   });
   
-  $("input.published_on").datepicker({
+  $("input.chapter").tokenInput("/chapters.json", {
+    theme: "facebook",
+    tokenLimit: 1
+  });
+  
+  $("input.reported_on").datepicker({
     
   });
 });
