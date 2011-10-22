@@ -1,29 +1,34 @@
-<div>
-  <%= form_for :locations do |f| %>
+<table class="locations">
+  <thead>
+    <tr>
+      <th class="location">Locations</th>
+      <th class="hits" colspan="2">Hits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= form_for :locations do |f| %>
+    <tr class="filters">
+      <td>&nbsp;</td>
+      <td class="start_date"><%= f.text_field :start_time, :class => "datetime" %></td>
+      <td class="end_date"><%= f.text_field :end_time, :class => "datetime" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-    <span>Time :</span>
-    <%= f.text_field :start_time, :class => "datetime" %>
-    <%= f.text_field :end_time, :class => "datetime" %>
-
-    <%= f.submit "Search" %>
-  <% end %>
-</div>
-
-<div class="locations">
-  <% @regions.each do |region| %>
-    <div class="region">
-      <h3 class="name"><%= region.name %></h3>
-      <h3 class="count"><%= region.hits.during(@date_range).count %></h3>
-    </div>
-    <table class="chapters">
-      <tbody>
-        <% region.chapters.each do |chapter| %>
-        <tr class="chapter <%= cycle :even, :odd %>">
-          <td class="name"><%= link_to chapter.name, edit_chapter_path(chapter) %></td>
-          <td class="count"><%= chapter.hits.during(@date_range).count %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
-</div>
+<table class="locations">
+  <tbody>
+    <% @regions.each do |region| %>
+    <tr class="region">
+      <td class="name"><%= region.name %></td>
+      <td class="count"><%= region.hits.during(@date_range).count %></td>
+    </tr>
+    <% region.chapters.each do |chapter| %>
+    <tr class="chapter <%= cycle :even, :odd %>">
+      <td class="name"><%= link_to chapter.name, edit_chapter_path(chapter) %></td>
+      <td class="count"><%= chapter.hits.during(@date_range).count %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
