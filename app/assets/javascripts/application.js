@@ -6,4 +6,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.tokeninput
+//= require_self
 //= require_tree .
+
+$(function() {
+  $("input.outlet").tokenInput("/outlets.json", {
+    theme: "facebook",
+    tokenLimit: 1
+  });
+
+  $("input.reporter").tokenInput("/reporters.json", {
+    theme: "facebook",
+    tokenLimit: 1
+  });
+
+  $("input.tags").tokenInput("/tags.json", {
+    theme: "facebook",
+    preventDuplicates: true
+  });
+  
+  $("input.published_on").datepicker({
+    
+  });
+});

@@ -1,0 +1,46 @@
+<%= form_for :hit do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :published_on %>
+    <%= f.text_field :published_on, :class => "published_on" %>
+  </div>
+  
+  <div>
+    <%= f.label :outlet_id %>
+    <%= f.text_field :outlet_id, :class => "outlet" %>
+  </div>
+  
+  <div>
+    <%= f.label :reporter_id %>
+    <%= f.text_field :reporter_id, :class => "reporter" %>
+  </div>
+  
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  
+  <div>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, :class => "tags" %>
+  </div>
+  
+  <div>
+    <%= f.label :tone %>
+    <%= f.text_field :tone %>
+  </div>
+  
+  <div>
+    <%= f.label :chapter %>
+    <%= f.text_field :chapter %>
+  </div>
+  
+  <div>
+    <%= link_to "cancel" %>
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

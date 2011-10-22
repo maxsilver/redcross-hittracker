@@ -1,0 +1,30 @@
+<%= form_for @user do |f| %>
+  <h4>Create User</h4>
+  
+  <% @user.errors.full_messages.each do |error| %>
+    <%= error %><br>
+  <% end %>
+  
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  
+  <%= f.submit "Create" %>
+<% end %>
+
+<h4>Users</h4>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.email %>
+      <%= link_to "Delete", user, :method => "delete" %>
+    </li>
+  <% end %>
+</ul>
