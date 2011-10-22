@@ -1,5 +1,6 @@
-<h4>Create User</h4>
-<%= render :partial => "form", :locals => { :user => @user, :submit_action => "Create"} %>
+<h4>Add a User</h4>
+<p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
+<%= render "form", :user => @user, :submit_action => "Create" %>
 
 <h4>Users</h4>
 <%= render :partial => "list", :locals => { :users => @users } %>

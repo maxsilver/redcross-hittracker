@@ -5,11 +5,15 @@
   </thead>
   <tbody>
     <tr class="filters">
-      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Reporters" %></td>
-      <td class="hits">
-        <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
-        <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
-      </td>
+      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
+
+      <% if !PressRelease.earliest.nil? && !PressRelease.latest.nil? %>
+        <td class="released_on">
+          <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
+          <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
+        </td>
+      <% end %>
+
     </tr>
     <% @reporters.each do |reporter| %>
     <tr class="<%= cycle :even, :odd %>">
@@ -29,11 +33,13 @@
   </thead>
   <tbody>
     <tr class="filters">
-      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Media Outlets" %></td>
-      <td class="hits">
+      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
+      <% if !PressRelease.earliest.nil? && !PressRelease.latest.nil? %>
+      <td class="released_on">
         <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
         <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
       </td>
+      <% end %>
     </tr>
     <% @media_outlets.each do |media_outlet| %>
     <tr class="<%= cycle :even, :odd %>">

@@ -7,25 +7,22 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+
   def new
     @user = User.new
   end
-  
+
   def update
-    @user = User.find(params[:id])
-    
     if @user.update_attributes(params[:user])
       redirect_to users_path, :notice => "Updated successully!"
     else
-      render action: "edit"
+      render action: "edit", :error => "Could not update the user."
     end
   end
-  
+
   def edit
-    @user = User.find(params[:id])
   end
-  
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -34,20 +31,6 @@ class UsersController < ApplicationController
       @users = User.all
       render :index
     end
-  end
-
-  def edit
-    @users = User.all
-  end
-
-  def update
-    if @user.update_attributes(params[:user])
-      flash[:notice] = "The user has been updated."
-    else
-      flash[:error] = "The user could not be saved."
-    end
-
-    redirect_to edit_user_path(@user.id)
   end
 
   def destroy

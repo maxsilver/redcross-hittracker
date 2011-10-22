@@ -1,9 +1,4 @@
 <%= form_for user do |f| %>
-
-  <h4>Add a User</h4>
-  <p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
-
-  
   <% @user.errors.full_messages.each do |error| %>
     <%= error %><br>
   <% end %>
