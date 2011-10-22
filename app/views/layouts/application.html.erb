@@ -8,41 +8,17 @@
 </head>
 <body>
   <div class="container">
-    <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
-    <h1>Media Hit Tracker</h1>
-
-    <nav>
-      <div>
-        <%= link_to "Hits", hits_path, :class => "title #{menu_is_selected('/hits')}" %>
-        <%= link_to "+", new_hit_path, :class => "new" %>
-      </div>
-      <div class="media">
-        <%= link_to "Media", media_path, :class => "title #{menu_is_selected('/media')}" %>
-        <%= link_to "+", "#", :class => "new" %>
-        <div class="new-menu">
-          <div class="tip-border"></div>
-          <div class="tip"></div>
-          <%= link_to "New Reporter", new_reporter_path %>
-          <%= link_to "New Media Outlet", new_media_outlet_path %>
-        </div>
-      </div>
-      <div>
-        <%= link_to "Press Releases", press_releases_path, :class => "title #{menu_is_selected('/press_releases')}" %>
-        <%= link_to "+", new_press_release_path, :class => "new" %>
-      </div>
-      <div>
-        <%= link_to "Locations", locations_path, :class => "title #{menu_is_selected('/locations')}" %>
-        <%= link_to "+", new_chapter_path, :class => "new" %>
-      </div>
-      <div>
-        <%= link_to "Users", users_path, :class => "title #{menu_is_selected('/users')}" %>
-        <%= link_to "+", new_user_path, :class => "new" %>
-      </div>
-    </nav>
-
+    <header>
+      <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
+      <h1>Media Hit Tracker</h1>
+    </header>
+    
+    <% if current_user %>
+    <%= render :partial => "navigation" %>
+    <% end %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </div>
 </body>
