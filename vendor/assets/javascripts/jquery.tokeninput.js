@@ -193,6 +193,7 @@ $.TokenList = function (input, url_or_data, settings) {
         .focus(function () {
             if (settings.tokenLimit === null || settings.tokenLimit !== token_count) {
                 show_dropdown_hint();
+                if(settings.minChars == 0) { do_search(); }
             }
         })
         .blur(function () {
@@ -735,7 +736,8 @@ $.TokenList = function (input, url_or_data, settings) {
     function do_search() {
         var query = input_box.val().toLowerCase();
 
-        if(query && query.length) {
+        // MHS Change: Allow search requests with no query string
+        // if(query && query.length) {
             if(selected_token) {
                 deselect_token($(selected_token), POSITION.AFTER);
             }
@@ -750,7 +752,7 @@ $.TokenList = function (input, url_or_data, settings) {
             } else {
                 hide_dropdown();
             }
-        }
+        // }
     }
 
     // Do the actual search

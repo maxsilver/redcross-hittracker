@@ -15,7 +15,8 @@
 $(function() {
   $("input.outlet").tokenInput("/outlets.json", {
     theme: "facebook",
-    tokenLimit: 1
+    tokenLimit: 1,
+    minChars: 0
   });
 
   $("input.reporter").tokenInput("/reporters.json", {
