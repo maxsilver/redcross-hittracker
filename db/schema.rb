@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111022024436) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tone"
+    t.text     "notes"
   end
 
   create_table "media_outlets", :force => true do |t|

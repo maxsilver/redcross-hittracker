@@ -1,4 +1,10 @@
 <%= form_for hit do |f| %>
+
+  <div class="errors">
+    <%= hit.errors.full_messages %>
+  </div>
+  
+  
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -25,8 +31,8 @@
   </div>
   
   <div>
-    <%= f.label :tags %>
-    <%= f.text_field :tags, :class => "tags" %>
+    <%= f.label :tag_list, "Tags" %>
+    <%= f.text_field :tag_list, :class => "tags" %>
   </div>
   
   <div>
@@ -35,8 +41,13 @@
   </div>
   
   <div>
-    <%= f.label :chapter %>
-    <%= f.text_field :chapter, :class => "chapter" %>
+    <%= f.label :chapter_id %>
+    <%= f.text_field :chapter_id, :class => "chapter" %>
+  </div>
+  
+  <div>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
   </div>
   
   <div>
