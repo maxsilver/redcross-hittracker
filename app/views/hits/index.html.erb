@@ -1,19 +1,36 @@
-<table>
+<table class="hits">
   <thead>
-    <th>Title</th>
-    <th>Reporter</th>
-    <th>Media Outlet</th>
-    <th>Chapter</th>
-    <th>Reported On</th>
+    <th class="title">Title</th>
+    <th class="reporter">Reporter</th>
+    <th class="media_outlet">Media Outlet</th>
+    <th class="chapter">Chapter</th>
+    <th class="reported_on">Reported On</th>
+    <th class="tags"></th>
   </thead>
   <tbody>
+
+    <%= form_for :hit, :method => :get do |f| %>
+    <tr class="filters">
+      <td class="title"><%= f.text_field :title, :placeholder => "All Hits" %></td>
+      <td class="reporter"><%= f.select :reporter_id, options_from_collection_for_select(@reporters, 'id', 'name'), :include_blank => true %></td>
+      <td class="media_outlet"><%= f.select :media_outlet_id, options_from_collection_for_select(@media_outlets, 'id', 'name'), :include_blank => true %></td>
+      <td class="chapter"><%= f.select :chapter_id, options_from_collection_for_select(@chapters, 'id', 'name'), :include_blank => true %></td>
+      <td class="reported_on">
+        <%= f.text_field :start_on, :class => "start_on" %> -
+        <%= f.text_field :end_on, :class => "end_on" %>
+      </td>
+      <td class="tags"><%= text_field_tag :tags, nil, :placeholder => "All Tags" %></td>
+      <td class=""><%= f.submit "Search" %></td>
+    </tr>
+    <% end %>
     <% @hits.each do |hit| %>
-    <tr>
+    <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to hit.title, edit_hit_path(hit) %></td>
       <td><%= hit.reporter.name %></td>
       <td><%= hit.media_outlet.name %></td>
       <td><%= hit.chapter.name %></td>
       <td><%= hit.reported_on %></td>
+      <td><%= hit.tag_list %></td>
     </tr>
     <% end %>
   </tbody>

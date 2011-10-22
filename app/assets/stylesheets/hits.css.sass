@@ -1,0 +1,33 @@
+@import "compass"
+
+table.hits
+  width: 100%
+
+
+
+  tr
+    &.filters
+      background-color: #d1c99d
+      td
+        &:first-child
+          +border-radius(5px 0 0 5px)
+        &:last-child
+          +border-radius(0 5px 5px 0)
+    &.odd
+      background-color: lighten(#d1c99d, 20%)
+    td
+      padding: 10px
+      &:first-child
+        +border-radius(3px 0 0 3px)
+        input
+          width: 90%
+      &.reported_on
+        width: 150px
+        input
+          width: 41%
+      &.tags
+        width: 80px
+      &:last-child
+        +border-radius(0 3px 3px 0)
+        input
+          width: 90%
