@@ -1,33 +1,10 @@
-<%= form_for @user do |f| %>
-  
-  <h2>Add a User</h2>
-  <p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
-  
-  <% @user.errors.full_messages.each do |error| %>
-    <%= error %><br>
-  <% end %>  
-  
-  <div>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => "email text" %>
-  </div>
-
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, :class => "password text" %>
-  </div>
-  
-  <%= f.submit "Add" %>
-  
-<% end %>
-
 <h4>Users</h4>
 
 <ul>
   <% @users.each do |user| %>
     <li>
-      <%= user.email %>
-      <%= link_to "Delete", user, :method => "delete" %>
+      <%= link_to user.email, edit_user_path(user) %>
+      <%= link_to "Delete", user, :method => "delete", :confirm => "Are you sure?" %>
     </li>
   <% end %>
 </ul>
