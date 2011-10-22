@@ -4,12 +4,16 @@
   <thead>
     <th>Title</th>
     <th>Released On</th>
+    <th>Updated At</th>
+    <th>Created At</th>
   </thead>
   <tbody>
     <% @press_releases.each do |press_release| %>
     <tr>
       <td><%= link_to press_release.title, edit_press_release_path(press_release) %></td>
       <td><%= press_release.released_on %></td>
+      <td><%= press_release.updated_at %></td>
+      <td><%= press_release.created_at %></td>
     </tr>
     <% end %>
   </tbody>

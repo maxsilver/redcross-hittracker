@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.tokeninput
+//= require jquery.tablesorter
 //= require_self
 //= require_tree .
 
@@ -40,4 +41,6 @@ $(function() {
   $("input.reported_on, input.released_on").datepicker({
     dateFormat: 'yy-mm-dd'
   });
+  
+  $("table").tablesorter();
 });
