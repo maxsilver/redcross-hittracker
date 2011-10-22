@@ -1,0 +1,35 @@
+@import "compass"
+
+.locations
+  .region
+    +pie-clearfix
+    +border-radius(5px)
+    background-color: #d1c99d
+    padding: 10px
+    
+    .name
+      +float-left
+    .count
+      +float-right
+    
+  .chapters
+    .chapter
+      background-color: lighten(#d1c99d, 20%)
+      .count
+        text-align: right
+        
+    // &.odd
+    //   background-color: lighten(#d1c99d, 20%)
+    // td
+    //   padding: 10px
+    //   &:first-child
+    //     +border-radius(3px 0 0 3px)
+    //     input
+    //       width: 454px
+    //   &.released_on
+    //     input
+    //       width: 93px
+    //   &:last-child
+    //     +border-radius(0 3px 3px 0)
+    //     input
+    //       width: 208px

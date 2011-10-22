@@ -1,5 +1,3 @@
-Location INDEX!
-
 <div>
   <%= form_for :locations do |f| %>
 
@@ -11,18 +9,21 @@ Location INDEX!
   <% end %>
 </div>
 
-<div class="regions">
+<div class="locations">
   <% @regions.each do |region| %>
     <div class="region">
-      <h3>
-        <%= region.name %> <span class="number"><%= region.hits.during(@date_range).count %></span>
-      </h3>
-      <ul>
-        <% region.chapters.each do |chapter| %>
-        <li><%= chapter.name %> <%= chapter.hits.during(@date_range).count %></li>
-        <% end %>
-      </ul>
+      <h3 class="name"><%= region.name %></h3>
+      <h3 class="count"><%= region.hits.during(@date_range).count %></h3>
     </div>
+    <table class="chapters">
+      <tbody>
+        <% region.chapters.each do |chapter| %>
+        <tr class="chapter">
+          <td class="name"><%= chapter.name %></td>
+          <td class="count"><%= chapter.hits.during(@date_range).count %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   <% end %>
 </div>
-
