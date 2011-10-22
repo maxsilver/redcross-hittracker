@@ -1,17 +1,6 @@
-<table class="users">
-  <thead>
-    <th class="name">Name</th>
-    <th class="email">Email</th>
-  </thead>
-  <tbody>
-    <tr class="filters">
-      <td colspan="2" class="name"><%= text_field_tag :name, nil, :placeholder => "All Users" %></td>
-    </tr>
-    <% @users.each do |user| %>
-    <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to user.name, edit_user_path(user) %></td>
-      <td><%= mail_to user.email %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<h4>Add a User</h4>
+<p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
+<%= render "form", :user => @user, :submit_action => "Create" %>
+
+<h4>Users</h4>
+<%= render :partial => "list", :locals => { :users => @users } %>

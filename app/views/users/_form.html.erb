@@ -1,13 +1,8 @@
 <%= form_for user do |f| %>
-
-  <h4>Add a User</h4>
-  <p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
-
-  
   <% @user.errors.full_messages.each do |error| %>
     <%= error %><br>
   <% end %>
-  
+
   <div>
     <%= f.label :email %><br />
     <%= f.text_field :email, :class => "email text" %>
@@ -17,10 +12,11 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, :class => "password text" %>
   </div>
-  
+
   <div>
-    <%= link_to "cancel", users_path %>
-    <%= f.submit "Save" %>
+    <%= f.label :receive_notifications, "Send me an email when a new Hit is being tracked."%><br />
+    <%= f.check_box :receive_notifications %>
   </div>
-  
+
+  <%= f.submit submit_action %>
 <% end %>
