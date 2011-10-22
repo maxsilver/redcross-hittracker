@@ -11,15 +11,15 @@
 
     <%= form_for :hit, :method => :get do |f| %>
     <tr class="filters">
-      <td class="title"><%= f.text_field :title, :placeholder => "All Hits" %></td>
-      <td class="reporter"><%= f.select :reporter_id, options_from_collection_for_select(@reporters, 'id', 'name'), :include_blank => true %></td>
-      <td class="media_outlet"><%= f.select :media_outlet_id, options_from_collection_for_select(@media_outlets, 'id', 'name'), :include_blank => true %></td>
-      <td class="chapter"><%= f.select :chapter_id, options_from_collection_for_select(@chapters, 'id', 'name'), :include_blank => true %></td>
+      <td class="title"><%= f.text_field :title_contains, :placeholder => "All Hits" %></td>
+      <td class="reporter"><%= f.select :reporter_id_equals, options_from_collection_for_select(@reporters, 'id', 'name'), :include_blank => true %></td>
+      <td class="media_outlet"><%= f.select :media_outlet_id_equals, options_from_collection_for_select(@media_outlets, 'id', 'name'), :include_blank => true %></td>
+      <td class="chapter"><%= f.select :chapter_id_equals, options_from_collection_for_select(@chapters, 'id', 'name'), :include_blank => true %></td>
       <td class="reported_on">
-        <%= f.text_field :start_on, :class => "start_on" %> -
-        <%= f.text_field :end_on, :class => "end_on" %>
+        <%= f.text_field :reported_on_greater_than_or_equal_to, :class => "start_on" %> -
+        <%= f.text_field :reported_on_less_than_or_equal_to, :class => "end_on" %>
       </td>
-      <td class="tags"><%= text_field_tag :tags, nil, :placeholder => "All Tags" %></td>
+      <td class="tags"><!--<%= f.text_field :tags, :placeholder => "All Tags" %>--></td>
       <td class=""><%= f.submit "Search" %></td>
     </tr>
     <% end %>

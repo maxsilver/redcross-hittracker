@@ -4,37 +4,8 @@ class HitsController < ApplicationController
 
   def index
     if params[:commit]
-
-      conditions = {}
-
-      if media_outlet = MediaOutlet.where(:id => params[:hit][:media_outlet_id])
-        conditions[:media_outlet_id] = media_outlet
-      end
-
-      if chapter = Chapter.where(:id => params[:hit][:chapter_id])
-        conditions[:chapter_id] = chapter
-      end
-
-      if reporter = Reporter.where(:id => params[:hit][:reporter_id])
-        conditions[:reporter_id] = reporter
-      end
-
-      # if params[:hit][:title] && params[:hit][:title].length > 0
-      #   conditions['title'] = " LIKE %{params[:title]}%"
-      # end
-
-      # search << Hit.tagged_with(params[:tags].split(',')) if params[:tags]
-      # if chapter = Chapter.find(params[:hit][:chapter_id])
-      #   conditions[:chapter_id] = chapter
-      # end
-
-      if params[:tags] && params[:start_date] && params[:end_date]
-        @hits = Hit.during(Date.parse(params[:start_date])..Date.parse(params[:end_date])).tagged_with(params[:tags].split(','))
-        # search << Hit.during(Date.parse(params[:start_date])..Date.parse(params[:end_date])) if params[:start_date] && params[:end_date]
-      else
-        @hits = Hit.find(:all, :conditions => conditions)
-      end
-
+      @search = Hit.search(params[:hit])
+      @hits = @search.all
     else
       @hits = Hit.all
     end
