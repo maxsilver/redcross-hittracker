@@ -1,0 +1,16 @@
+A new media hit has been created:
+
+Name: <%= @hit.title %>
+Created By: <%= @hit.user %>
+Reported On: <%= @hit.reported_on %>
+Media Outlet: <%= @hit.media_outlet.name%>
+Reporter: <%= @hit.reporter.name%>
+Press Release: <%= @hit.press_release.title %>
+Chapter: <%= @hit.chapter.name %>
+
+Content: <%= @hit.content %>
+Tone: <%= @hit.tone %>
+Notes: <%= @hit.notes %>
+
+To view this media hit, visit:
+<%= hit_url(@hit.id) %>

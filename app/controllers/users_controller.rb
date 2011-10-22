@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  
+  before_filter :find_user, :only => [:edit, :update, :destroy]
+  before_filter :new_user, :only => [:new, :index]
+  before_filter :all_users, :only => [:new, :index]
+
   def index
-    @user = User.new
     @users = User.all
   end
   
@@ -33,10 +35,35 @@ class UsersController < ApplicationController
       render :index
     end
   end
-  
+
+  def edit
+    @users = User.all
+  end
+
+  def update
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "The user has been updated."
+    else
+      flash[:error] = "The user could not be saved."
+    end
+
+    redirect_to edit_user_path(@user.id)
+  end
+
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
+  end
+
+  def find_user
+    @user = User.find(params[:id])
+  end
+
+  def new_user
+    @user = User.new
+  end
+
+  def all_users
+    @users = User.all
   end
 end
