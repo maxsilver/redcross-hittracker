@@ -1,12 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.0'
 gem 'pg'
 gem 'thin'
 gem 'jquery-rails'
 gem 'devise'
 gem 'kronic'
-
 gem 'acts-as-taggable-on'
 
 group :assets do
