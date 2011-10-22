@@ -31,12 +31,12 @@
   
   <div>
     <%= f.label :tone %>
-    <%= f.text_field :tone %>
+    <%= f.select :tone, [["Positive","positive"],["Neutral","neutral"],["Negative","negative"]], :include_blank => true %>
   </div>
   
   <div>
     <%= f.label :chapter %>
-    <%= f.text_field :chapter %>
+    <%= f.text_field :chapter, :class => "chapter" %>
   </div>
   
   <div>

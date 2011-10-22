@@ -27,6 +27,11 @@ $(function() {
     preventDuplicates: true
   });
   
+  $("input.chapter").tokenInput("/chapters.json", {
+    theme: "facebook",
+    tokenLimit: 1
+  });
+  
   $("input.published_on").datepicker({
     
   });
