@@ -16,5 +16,5 @@ HitTracker::Application.routes.draw do
   
   resources :tags
 
-  root :to => 'dashboard#index'
+  root :to => 'hits#index'
 end

@@ -1,0 +1,55 @@
+@import "compass"
+@import "blueprint"
+
+body
+  font: 14px/16px Arial, Helvetica, Verdana, sans-serif
+  border-top: 10px solid #ff0000
+
+.container  
+  +container
+  margin-top: 15px
+
+nav
+  +pie-clearfix
+  margin-bottom: 20px
+
+  div
+    +float-left
+    +column(4.75)
+    position: relative
+
+    .title
+      border: 1px solid #ccc  
+      +border-radius
+      +linear-gradient(#f7f7f7 56%, #ffffff 11%)      
+      display: block
+      text-decoration: none
+      color: #666
+      padding: 10px    
+
+      &:hover
+        +linear-gradient(#ffffff 56%, #f7f7f7 11%)      
+        color: #999
+
+    .new
+      position: absolute
+      top: 8px
+      right: 5px
+      width: 20px
+      height: 20px
+      border: 1px solid #ccc
+      +border-radius(20px)
+      text-align: center
+      text-decoration: none
+      color: #666
+      font-size: 20px
+      line-height: 20px
+
+      &:hover
+        background-color: #ccc
+        color: #999
+      
+h2
+  font-size: 24px
+  font-weight: bold
+  
