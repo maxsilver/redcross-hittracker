@@ -1,5 +1,5 @@
-<%= form_for hit do |f| %>
-  <h2>Create a New Hit</h2>
+<%= form_for hit, :html => { :class => "hit" } do |f| %>
+  <h2>Add a Hit</h2>
 
   <div class="errors">
     <%= hit.errors.full_messages if hit.errors.any? %>

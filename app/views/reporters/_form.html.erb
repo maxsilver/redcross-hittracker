@@ -1,38 +1,38 @@
-<%= form_for reporter do |f| %>
+<%= form_for reporter, :html => { :class => "reporter" } do |f| %>
+  <h2>Add a Reporter</h2>
 
   <div class="errors">
-    <%= reporter.errors.full_messages %>
+    <%= reporter.errors.full_messages if reporter.errors.any? %>
   </div>
   
   <%= f.hidden_field :user_id, :value => current_user.id %>
   
-  <div>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :class => "title" %>
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
   
-  <div>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, :class => "text" %>
+    <div class="email">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="phone">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
   </div>
   
-  <div>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => "title" %>
+  <div class="fax">
+    <%= f.label :fax %>
+    <%= f.text_field :fax %>
   </div>
   
-  <div>
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax, :class => "title" %>
+  <div class="comment">
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
   </div>
   
-  <div>
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment, :class => "title" %>
-  </div>
-  
-  <div>
-    <%= link_to "cancel", media_path %>
+  <div class="actions">
     <%= f.submit "Save" %>
   </div>
 <% end %>

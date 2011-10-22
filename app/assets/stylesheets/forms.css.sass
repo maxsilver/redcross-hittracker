@@ -10,27 +10,40 @@ form
   
   input[type=text], select
     width: 100%
+
   textarea
     width: 95%
     height: 100px
   
+  h2
+    margin-bottom: 20px
+
   label
     font-weight: bold
     display:  block
     margin-bottom: 5px
-  h2
-    margin-bottom: 20px
-  .title, .media_outlet, .tags, .chapter
-    +column(9)
-  .reported_on, .reporter, .tone, .press_release
-    +push(1)
-    +column(9)
     
-  .content
-    clear: both
-    margin-bottom: 1.5em
   .actions
     margin-top: 20px
     float: right
     input
       width: 100px
+
+form.hit
+  .title, .media_outlet, .tags, .chapter
+    +column(9)
+  .reported_on, .reporter, .tone, .press_release
+    +push(1)
+    +column(9)
+  .content
+    clear: both
+    margin-bottom: 1.5em
+
+form.reporter
+  .name, .phone
+    +column(9)
+  .email, .fax
+    +push(1)
+    +column(9)
+  .comment
+    clear: both
