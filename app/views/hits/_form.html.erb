@@ -1,62 +1,61 @@
 <%= form_for hit do |f| %>
+  <h2>Create a New Hit</h2>
 
   <div class="errors">
-    <%= hit.errors.full_messages %>
+    <%= hit.errors.full_messages if hit.errors.any? %>
   </div>
-
-
-  <div>
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :class => "title" %>
+  
+  <div class="title">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
-
-  <div>
-    <%= f.label :reported_on %><br />
-    <%= f.text_field :reported_on, :class => "reported_on text" %>
+  
+  <div class="reported_on">
+    <%= f.label :reported_on, "Date Reported" %>
+    <%= f.text_field :reported_on, :class => "text" %>
   </div>
-
-  <div>
-    <%= f.label :media_outlet_id %><br />
+  
+  <div class="media_outlet">
+    <%= f.label :media_outlet_id %>
     <%= f.select :media_outlet_id, options_from_collection_for_select(@media_outlets, "id", "name"), :class => "outlet text" %>
   </div>
-
-  <div>
-    <%= f.label :reporter_id %><br />
+  
+  <div class="reporter">
+    <%= f.label :reporter_id %>
     <%= f.select :reporter_id, options_from_collection_for_select(@reporters, "id", "name"), :class => "outlet text" %>
   </div>
-
-  <div>
-    <%= f.label :content %><br />
+  
+  <div class="content">
+    <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
-
-  <div>
-    <%= f.label :tag_list, "Tags" %><br />
-    <%= f.text_field :tag_list, :class => "tags text" %>
+  
+  <div class="tags">
+    <%= f.label :tag_list, "Tags" %>
+    <%= f.text_field :tag_list, :class => "text" %>
   </div>
-
-  <div>
-    <%= f.label :tone %><br />
+  
+  <div class="tone">
+    <%= f.label :tone %>
     <%= f.select :tone, [["Positive","positive"],["Neutral","neutral"],["Negative","negative"]], :include_blank => true %>
   </div>
-
-  <div>
-    <%= f.label :chapter_id %><br />
-    <%= f.select :chapter_id, options_from_collection_for_select(@chapters, "id", "name"), :class => "outlet text" %>
+  
+  <div class="chapter">
+    <%= f.label :chapter_id %>
+    <%= f.select :chapter_id, options_from_collection_for_select(@chapters, "id", "name"), :class => "text" %>
   </div>
 
-  <div>
-    <%= f.label :press_release_id %><br />
-    <%= f.select :press_release_id, options_from_collection_for_select(@press_releases, "id", "title"), :class => "outlet text" %>
+  <div class="press_release">
+    <%= f.label :press_release_id, "Press Release" %>
+    <%= f.select :press_release_id, options_from_collection_for_select(@press_releases, "id", "title"), :class => "text" %>
   </div>
-
-  <div>
-    <%= f.label :notes %><br />
+  
+  <div class="notes">
+    <%= f.label :notes %>
     <%= f.text_area :notes %>
   </div>
-
-  <div>
-    <%= link_to "cancel", hits_path %>
+  
+  <div class="actions">
     <%= f.submit "Save" %>
   </div>
 <% end %>

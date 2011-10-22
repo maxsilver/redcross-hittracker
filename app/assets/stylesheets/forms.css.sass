@@ -1,0 +1,36 @@
+@import "compass"
+@import "blueprint"
+
+form
+  +border-radius()
+  +push(1)
+  +column(20)
+  padding: 20px 40px
+  background-color: #ccc
+  
+  input[type=text], select
+    width: 100%
+  textarea
+    width: 95%
+    height: 100px
+  
+  label
+    font-weight: bold
+    display:  block
+    margin-bottom: 5px
+  h2
+    margin-bottom: 20px
+  .title, .media_outlet, .tags, .chapter
+    +column(9)
+  .reported_on, .reporter, .tone, .press_release
+    +push(1)
+    +column(9)
+    
+  .content
+    clear: both
+    margin-bottom: 1.5em
+  .actions
+    margin-top: 20px
+    float: right
+    input
+      width: 100px
