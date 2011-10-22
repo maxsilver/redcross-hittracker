@@ -5,10 +5,10 @@ class ChaptersController < ApplicationController
   
   def index
     if params[:q]
-      respond_with(@chapters = Chapter.where("title like '%#{params[:q]}%'"))
+      respond_with(@chapters = Chapter.where("name like '%#{params[:q]}%'"))
+    else
+      respond_with(@chapters = Chapter.all)
     end
-    
-    respond_with(@chapters = Chapter.all)
   end
   
   def new

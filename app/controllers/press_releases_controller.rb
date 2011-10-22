@@ -5,10 +5,11 @@ class PressReleasesController < ApplicationController
   
   def index
     if params[:q]
+      
       respond_with(@press_releases = PressRelease.where("title like '%#{params[:q]}%'"))
+    else
+      respond_with(@press_releases = PressRelease.all)
     end
-    
-    respond_with(@press_releases = PressRelease.all)
   end
   
   def new

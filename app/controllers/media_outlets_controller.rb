@@ -6,9 +6,9 @@ class MediaOutletsController < ApplicationController
   def index
     if params[:q]
       respond_with(@media_outlets = MediaOutlet.where("name like '%#{params[:q]}%'"))
+    else
+      respond_with(@media_outlets = MediaOutlet.all)
     end
-    
-    respond_with(@press_releases = MediaOutlet.all)
   end
   
   def new

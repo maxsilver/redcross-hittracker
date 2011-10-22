@@ -4,7 +4,11 @@ class ReportersController < ApplicationController
   respond_to :json, :html
   
   def index
-    respond_with(@reporters = Reporter.where("name like '%#{params[:q]}%'"))
+    if params[:q]
+      respond_with(@reporters = Reporter.where("name like '%#{params[:q]}%'"))
+    else
+      respond_with(@reporters = Reporter.all)
+    end
   end  
   def new
     @reporter = current_user.reporters.build

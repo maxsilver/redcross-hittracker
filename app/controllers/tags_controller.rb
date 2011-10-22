@@ -4,6 +4,10 @@ class TagsController < ApplicationController
   respond_to :json
   
   def index
-    respond_with(@tags = ActsAsTaggableOn::Tag.named_like(params[:q]))
+    if params[:q]
+      respond_with(@tags = ActsAsTaggableOn::Tag.named_like(params[:q]))
+    else
+      respond_with(@chapters = ActsAsTaggableOn::Tag.all)
+    end
   end
 end

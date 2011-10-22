@@ -13,7 +13,7 @@
 //= require_tree .
 
 $(function() {
-  $("input.outlet").tokenInput("/outlets.json", {
+  $("input.outlet").tokenInput("/media_outlets.json", {
     theme: "facebook",
     tokenLimit: 1,
     minChars: 0
@@ -21,7 +21,8 @@ $(function() {
 
   $("input.reporter").tokenInput("/reporters.json", {
     theme: "facebook",
-    tokenLimit: 1
+    tokenLimit: 1,
+    minChars: 0
   });
 
   $("input.tags").tokenInput("/tags.json", {
@@ -31,12 +32,14 @@ $(function() {
   
   $("input.chapter").tokenInput("/chapters.json", {
     theme: "facebook",
-    tokenLimit: 1
+    tokenLimit: 1,
+    minChars: 0
   });
   
-  $("input.press_release").tokenInput("/releases.json", {
+  $("input.press_release").tokenInput("/press_releases.json", {
     theme: "facebook",
-    tokenLimit: 1
+    tokenLimit: 1,
+    minChars: 0
   });
   
   $("input.reported_on, input.released_on").datepicker({
