@@ -6,7 +6,6 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'devise'
 gem 'kronic'
-
 gem 'acts-as-taggable-on'
 
 group :assets do
