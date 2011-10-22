@@ -8,6 +8,7 @@ class Hit < ActiveRecord::Base
   validates :chapter, :presence => true
 
   default_scope where(:deleted_at => nil)
+  scope :during, lambda {|date_range| where(:reported_on => date_range)}
 
   belongs_to :reporter
   belongs_to :press_release
