@@ -1,10 +1,18 @@
-<h4>Users</h4>
-
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.email, edit_user_path(user) %>
-      <%= link_to "Delete", user, :method => "delete", :confirm => "Are you sure?" %>
-    </li>
-  <% end %>
-</ul>
+<table class="users">
+  <thead>
+    <th class="name">Name</th>
+    <th class="email">Email</th>
+  </thead>
+  <tbody>
+    <tr class="filters">
+      <td class="name"><%= text_field_tag :name, nil, :placeholder => "All Users" %></td>
+      <td></td>
+    </tr>
+    <% @users.each do |user| %>
+    <tr class="<%= cycle :even, :odd %>">
+      <td><%= link_to user.name, edit_user_path(user) %></td>
+      <td><%= mail_to user.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

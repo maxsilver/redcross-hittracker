@@ -1,6 +1,6 @@
 @import "compass"
 
-table.press_releases, table.reporters, table.media_outlets
+table.press_releases, table.users, table.reporters, table.media_outlets
   width: auto
 
   tr
@@ -40,6 +40,19 @@ table.press_releases
       &.tags
         input
           width: 208px
+
+table.users
+  th
+    &.name
+      width:  300px
+    &.email
+      width:  466px
+
+  tr
+    td
+      &.name
+        input
+          width: 454px
 
 table.reporters, table.media_outlets
   +float-left
