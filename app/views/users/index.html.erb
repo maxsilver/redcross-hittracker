@@ -1,23 +1,3 @@
-<%= form_for @user do |f| %>
-  <h4>Create User</h4>
-  
-  <% @user.errors.full_messages.each do |error| %>
-    <%= error %><br>
-  <% end %>
-  
-  <div>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => "email text" %>
-  </div>
-
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, :class => "password text" %>
-  </div>
-  
-  <%= f.submit "Create" %>
-<% end %>
-
 <h4>Users</h4>
 
 <ul>
