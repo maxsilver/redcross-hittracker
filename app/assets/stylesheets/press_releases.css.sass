@@ -19,13 +19,8 @@ table.press_releases, table.reporters, table.media_outlets
         +border-radius(3px 0 0 3px)
       &:last-child
         +border-radius(0 3px 3px 0)
-        input
-          width: 208px
-
 
 table.press_releases
-  width: auto
-
   th
     &.title
       width:  476px
@@ -45,3 +40,25 @@ table.press_releases
       &.tags
         input
           width: 208px
+
+table.reporters, table.media_outlets
+  +float-left
+  width: 465px
+  
+  th
+    &.title
+      width:  250px
+    &.hits
+      width:  200px
+
+  tr
+    td
+      &.title
+        input
+          width: 240px
+      &.hits
+        input
+          width: 75px
+
+table.reporters
+  margin-right: 20px

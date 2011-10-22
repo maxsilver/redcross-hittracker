@@ -1,14 +1,12 @@
-<h3>Reporters</h3>
-
 <table class="reporters">
   <thead>
-    <th class="title">Name</th>
-    <th class="released_on">Released On</th>
+    <th class="title">Reporter</th>
+    <th class="hits">Hits</th>
   </thead>
   <tbody>
     <tr class="filters">
-      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
-      <td class="released_on">
+      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Reporters" %></td>
+      <td class="hits">
         <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
         <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
       </td>
@@ -24,17 +22,15 @@
 
 <% reset_cycle %>
 
-<h3>Outlets</h3>
-
 <table class="media_outlets">
   <thead>
-    <th class="title">Name</th>
-    <th class="released_on">Released On</th>
+    <th class="title">Media Outlet</th>
+    <th class="hits">Hits</th>
   </thead>
   <tbody>
     <tr class="filters">
-      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
-      <td class="released_on">
+      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Media Outlets" %></td>
+      <td class="hits">
         <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
         <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
       </td>
