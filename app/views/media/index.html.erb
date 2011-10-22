@@ -14,7 +14,7 @@
     <% @reporters.each do |reporter| %>
     <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to reporter.name, edit_reporter_path(reporter) %></td>
-      <td><%= reporter.hits.count %></td>
+      <td class="hits"><%= reporter.hits.count %></td>
     </tr>
     <% end %>
   </tbody>
@@ -38,7 +38,7 @@
     <% @media_outlets.each do |media_outlet| %>
     <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to media_outlet.name, edit_media_outlet_path(media_outlet) %></td>
-      <td><%= media_outlet.hits.count %></td>
+      <td class="hits"><%= media_outlet.hits.count %></td>
     </tr>
     <% end %>
   </tbody>
