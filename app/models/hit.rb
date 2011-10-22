@@ -7,11 +7,13 @@ class Hit < ActiveRecord::Base
   validates :media_outlet, :presence => true
   validates :chapter, :presence => true
 
+  default_scope where(:deleted_at => nil)
+
   belongs_to :reporter
   belongs_to :press_release
   belongs_to :media_outlet
   belongs_to :chapter
   belongs_to :user
-  
+
   acts_as_taggable
 end

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022152825) do
+ActiveRecord::Schema.define(:version => 20111022171409) do
 
   create_table "chapters", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "region_id"
+    t.datetime "deleted_at"
   end
 
   create_table "hits", :force => true do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.datetime "updated_at"
     t.string   "tone"
     t.text     "notes"
+    t.datetime "deleted_at"
   end
 
   create_table "media_outlets", :force => true do |t|
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   create_table "press_releases", :force => true do |t|
@@ -52,12 +55,14 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "reporters", :force => true do |t|
@@ -69,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   create_table "taggings", :force => true do |t|
@@ -79,13 +85,15 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.string   "tagger_type"
     t.string   "context"
     t.datetime "created_at"
+    t.datetime "deleted_at"
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
   add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "deleted_at"
   end
 
   create_table "users", :force => true do |t|
@@ -101,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20111022152825) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
