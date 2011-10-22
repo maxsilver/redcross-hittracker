@@ -6,47 +6,52 @@
   
   
   <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :class => "title" %>
   </div>
   
   <div>
-    <%= f.label :reported_on %>
-    <%= f.text_field :reported_on, :class => "reported_on" %>
+    <%= f.label :reported_on %><br />
+    <%= f.text_field :reported_on, :class => "reported_on text" %>
   </div>
   
   <div>
-    <%= f.label :media_outlet_id %>
-    <%= f.text_field :media_outlet_id, :class => "outlet" %>
+    <%= f.label :media_outlet_id %><br />
+    <%= f.text_field :media_outlet_id, :class => "outlet text" %>
   </div>
   
   <div>
-    <%= f.label :reporter_id %>
-    <%= f.text_field :reporter_id, :class => "reporter" %>
+    <%= f.label :reporter_id %><br />
+    <%= f.text_field :reporter_id, :class => "reporter text" %>
   </div>
   
   <div>
-    <%= f.label :content %>
+    <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
   
   <div>
-    <%= f.label :tag_list, "Tags" %>
-    <%= f.text_field :tag_list, :class => "tags" %>
+    <%= f.label :tag_list, "Tags" %><br />
+    <%= f.text_field :tag_list, :class => "tags text" %>
   </div>
   
   <div>
-    <%= f.label :tone %>
+    <%= f.label :tone %><br />
     <%= f.select :tone, [["Positive","positive"],["Neutral","neutral"],["Negative","negative"]], :include_blank => true %>
   </div>
   
   <div>
-    <%= f.label :chapter_id %>
-    <%= f.text_field :chapter_id, :class => "chapter" %>
+    <%= f.label :chapter_id %><br />
+    <%= f.text_field :chapter_id, :class => "chapter text" %>
+  </div>
+
+  <div>
+    <%= f.label :press_release_id %><br />
+    <%= f.text_field :press_release_id, :class => "press_release text" %>
   </div>
   
   <div>
-    <%= f.label :notes %>
+    <%= f.label :notes %><br />
     <%= f.text_area :notes %>
   </div>
   

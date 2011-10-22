@@ -32,7 +32,12 @@ $(function() {
     tokenLimit: 1
   });
   
-  $("input.reported_on").datepicker({
-    
+  $("input.press_release").tokenInput("/releases.json", {
+    theme: "facebook",
+    tokenLimit: 1
+  });
+  
+  $("input.reported_on, input.released_on").datepicker({
+    dateFormat: 'yy-mm-dd'
   });
 });

@@ -1,3 +1,22 @@
 <h2>Hits</h2>
 
-<%= link_to "New Hit!", new_hit_path %>
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Reporter</th>
+    <th>Media Outlet</th>
+    <th>Chapter</th>
+    <th>Reported On</th>
+  </thead>new
+  <tbody>
+    <% @hits.each do |hit| %>
+    <tr>
+      <td><%= hit.title %></td>
+      <td><%= hit.reporter.name %></td>
+      <td><%= hit.media_outlet.name %></td>
+      <td><%= hit.chapter.name %></td>
+      <td><%= hit.reported_on %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

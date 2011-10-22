@@ -6,6 +6,7 @@ describe Hit do
   let(:user) { User.create }
   let(:press_release) { PressRelease.create }
   let(:media_outlet) { MediaOutlet.create }
+  let(:chapter) { Chapter.create }
     
   it "should save" do
     hit.save
@@ -15,6 +16,7 @@ describe Hit do
     hit.errors.messages[:reported_on].should include("can't be blank")
     hit.errors.messages[:media_outlet].should include("can't be blank")
     hit.errors.messages[:press_release].should include("can't be blank")
+    hit.errors.messages[:chapter].should include("can't be blank")
   end
   
   it "should not save when invalid" do
@@ -24,6 +26,7 @@ describe Hit do
     hit.reported_on = 2.weeks.ago
     hit.press_release = press_release
     hit.media_outlet = media_outlet
+    hit.chapter = chapter
     hit.save
     hit.errors.should be_empty
   end  

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022024436) do
+ActiveRecord::Schema.define(:version => 20111022052443) do
 
   create_table "chapters", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20111022024436) do
     t.text     "content"
     t.integer  "reporter_id"
     t.date     "reported_on"
+    t.integer  "press_release_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tone"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20111022024436) do
     t.integer  "coverage_area"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "press_releases", :force => true do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20111022024436) do
     t.date     "released_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "reporters", :force => true do |t|
@@ -58,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20111022024436) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "taggings", :force => true do |t|

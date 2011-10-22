@@ -2,7 +2,7 @@ class HitsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    
+    @hits = Hit.all
   end
   
   def new
@@ -10,7 +10,7 @@ class HitsController < ApplicationController
   end
   
   def create
-    @hit = Hit.new(params[:hit])
+    @hit = current_user.hits.build(params[:hit])
     if @hit.save
       redirect_to hits_path
     else

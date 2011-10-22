@@ -1,0 +1,23 @@
+<%= form_for press_release do |f| %>
+
+  <div class="errors">
+    <%= press_release.errors.full_messages %>
+  </div>
+  
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  
+  <div>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :class => "title" %>
+  </div>
+  
+  <div>
+    <%= f.label :released_on %><br />
+    <%= f.text_field :released_on, :class => "released_on text" %>
+  </div>
+  
+  <div>
+    <%= link_to "cancel" %>
+    <%= f.submit "Save" %>
+  </div>
+<% end %>

@@ -8,7 +8,7 @@ HitTracker::Application.routes.draw do
   resources :reporters
   resources :outlets
   
-  resources :releases
+  resources :press_releases
   
   get 'locations' => "locations#index"
   resources :regions

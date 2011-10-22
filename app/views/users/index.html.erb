@@ -6,13 +6,13 @@
   <% end %>
   
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class => "email text" %>
   </div>
 
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :class => "password text" %>
   </div>
   
   <%= f.submit "Create" %>

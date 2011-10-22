@@ -4,6 +4,6 @@ class OutletsController < ApplicationController
   respond_to :json
   
   def index
-    respond_with(@media_outlets = MediaOutlet.where("name LIKE '%#{params[:q]}%'"))
+    respond_with(@media_outlets = MediaOutlet.where("name like '%#{params[:q]}%'"))
   end
 end

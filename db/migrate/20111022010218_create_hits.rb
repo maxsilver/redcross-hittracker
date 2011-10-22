@@ -8,6 +8,7 @@ class CreateHits < ActiveRecord::Migration
       t.text    :content 
       t.integer :reporter_id
       t.date    :reported_on
+      t.integer :press_release_id
 
       t.timestamps
     end
