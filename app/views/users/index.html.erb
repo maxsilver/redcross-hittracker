@@ -1,9 +1,11 @@
 <%= form_for @user do |f| %>
-  <h4>Create User</h4>
+  
+  <h2>Add a User</h2>
+  <p>To add a user enter their email and password below. They will be sent an invitation email informing them how to login to the Media Hit Tracker.</p>
   
   <% @user.errors.full_messages.each do |error| %>
     <%= error %><br>
-  <% end %>
+  <% end %>  
   
   <div>
     <%= f.label :email %><br />
@@ -15,7 +17,8 @@
     <%= f.password_field :password, :class => "password text" %>
   </div>
   
-  <%= f.submit "Create" %>
+  <%= f.submit "Add" %>
+  
 <% end %>
 
 <h4>Users</h4>
