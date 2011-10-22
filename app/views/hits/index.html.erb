@@ -1,5 +1,3 @@
 <h2>Hits</h2>
 
-<%= form_for :hits do |f| %>
-  <%= f.submit "New Hit" %>
-<% end %>
+<%= render "form", :hit => @hit %>
