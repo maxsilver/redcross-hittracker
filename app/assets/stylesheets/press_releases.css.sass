@@ -1,8 +1,6 @@
 @import "compass"
 
 table.press_releases, table.users, table.reporters, table.media_outlets
-  width: auto
-
   tr
     &.filters
       background-color: #d1c99d
@@ -40,6 +38,36 @@ table.press_releases
       &.tags
         input
           width: 208px
+
+table.locations
+  tr
+    &.filters
+      background-color: #d1c99d
+      td
+        &:first-child
+          width: 80%
+          +border-radius(5px 0 0 5px)
+        &:last-child
+          +border-radius(0 5px 5px 0)
+    &.region
+      td
+        font-weight: bold
+        &.count
+          text-align: right
+    &.chapter
+      td
+        &.name
+          padding-left: 20px
+        &.count
+          text-align: right
+    &.odd
+      background-color: lighten(#d1c99d, 20%)
+    td
+      padding: 10px
+      &:first-child
+        +border-radius(3px 0 0 3px)
+      &:last-child
+        +border-radius(0 3px 3px 0)
 
 table.users
   th

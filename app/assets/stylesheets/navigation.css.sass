@@ -18,7 +18,9 @@ body
     line-height: 42px
     margin-right: 5px
     font-size: 24px
-
+    
+  header
+    +pie-clearfix
 nav
   +pie-clearfix
   clear: both
@@ -36,7 +38,8 @@ nav
       width: 120px
       border: 1px solid darken(#64a0c8, 5%)
       +border-radius(5px 0 0 5px)
-      +linear-gradient(#64a0c8 56%, lighten(#64a0c8, 10%) 11%)      
+      +linear-gradient(#64a0c8 56%, lighten(#64a0c8, 10%) 11%)
+      background-color: #64a0c8
       display: block
       text-decoration: none
       color: #fff
@@ -92,6 +95,7 @@ nav
       background-color: #64a0c8
       border: 1px solid darken(#64a0c8, 10%)
       +border-radius
+      z-index: 1000
 
       .tip-border, .tip
         position: absolute
