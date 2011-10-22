@@ -8,6 +8,7 @@ gem 'devise'
 gem 'kronic'
 gem 'acts-as-taggable-on'
 gem 'permanent_records'
+gem 'meta_search'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
