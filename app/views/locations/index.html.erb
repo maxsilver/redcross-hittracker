@@ -15,11 +15,11 @@ Location INDEX!
   <% @regions.each do |region| %>
     <div class="region">
       <h3>
-        Region <span class="number"><%= region.hits.during(@date_range).count %></span>
+        <%= region.name %> <span class="number"><%= region.hits.during(@date_range).count %></span>
       </h3>
       <ul>
         <% region.chapters.each do |chapter| %>
-        <li><%= chapter.name %><%= chapter.hits.during(@date_range).count %></li>
+        <li><%= chapter.name %> <%= chapter.hits.during(@date_range).count %></li>
         <% end %>
       </ul>
     </div>

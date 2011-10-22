@@ -43,7 +43,7 @@ $(function() {
   //   minChars: 0
   // });
 
-  $("input.reported_on, input.released_on").datepicker({
+  $("input.reported_on, input.released_on, input.start_on, input.end_on").datepicker({
     dateFormat: 'yy-mm-dd'
   });
 

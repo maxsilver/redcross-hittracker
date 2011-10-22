@@ -1,0 +1,36 @@
+@import "compass"
+
+table.press_releases
+  width: auto
+
+  th
+    &.title
+      width:  476px
+    &.released_on
+      width:  230px
+    &.tags
+      width:  230px
+
+  tr
+    &.filters
+      background-color: #d1c99d
+      td
+        &:first-child
+          +border-radius(5px 0 0 5px)
+        &:last-child
+          +border-radius(0 5px 5px 0)
+    &.odd
+      background-color: lighten(#d1c99d, 20%)
+    td
+      padding: 10px
+      &:first-child
+        +border-radius(3px 0 0 3px)
+        input
+          width: 454px
+      &.released_on
+        input
+          width: 93px
+      &:last-child
+        +border-radius(0 3px 3px 0)
+        input
+          width: 208px

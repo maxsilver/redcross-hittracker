@@ -3,51 +3,86 @@
 
 body
   font: 14px/16px Arial, Helvetica, Verdana, sans-serif
-  border-top: 10px solid #ff0000
+  border-top: 10px solid #64a0c8
 
 .container  
   +container
   margin-top: 15px
+  
+  .logo
+    margin-bottom: 15px
+    +float-left
+    
+  h1
+    +float-right
+    line-height: 42px
+    margin-right: 5px
+    font-size: 24px
 
 nav
   +pie-clearfix
+  clear: both
   margin-bottom: 20px
 
   div
     +float-left
-    +column(4.75)
+    +column(4.8)
     position: relative
+    &:last-child
+      margin-right: 0
 
     .title
-      border: 1px solid #ccc  
-      +border-radius
-      +linear-gradient(#f7f7f7 56%, #ffffff 11%)      
+      +float-left
+      width: 120px
+      border: 1px solid darken(#64a0ca, 5%)
+      +border-radius(5px 0 0 5px)
+      +linear-gradient(#64a0ca 56%, lighten(#64a0ca, 10%) 11%)      
       display: block
       text-decoration: none
-      color: #666
-      padding: 10px    
+      color: #fff
+      padding: 10px
 
       &:hover
-        +linear-gradient(#ffffff 56%, #f7f7f7 11%)      
-        color: #999
+        +linear-gradient(lighten(#64a0ca, 10%) 56%, #64a0ca 11%)
+        
+      &:active
+        +box-shadow(darken(#64a0ca, 20%), 0, 0, 4px, 4px, true)
+        background-image: none
+        background-color: darken(#64a0ca, 10%)
+      
+      &.selected
+        background-image: none
+        background-color: #003359
+        border-color: #003359
 
     .new
-      position: absolute
-      top: 8px
-      right: 5px
-      width: 20px
-      height: 20px
-      border: 1px solid #ccc
-      +border-radius(20px)
+      +float-right
+      display: block
+      width: 39px
+      padding: 6px 0
+      +linear-gradient(darken(#64a0ca, 10%) 56%, lighten(#64a0ca, 0%) 11%)      
+      +border-radius(0 5px 5px 0)
+      border: 1px solid darken(#64a0ca, 5%)
+      border-left: 0
       text-align: center
       text-decoration: none
-      color: #666
+      color: #fff
       font-size: 20px
-      line-height: 20px
+      line-height: 26px
+      font-weight: bold
 
       &:hover
-        background-color: #ccc
-        color: #999
+        +linear-gradient(lighten(#64a0ca, 0%) 56%, darken(#64a0ca, 10%) 11%)
+        
+      &:active
+        +box-shadow(darken(#64a0ca, 20%), 0, 0, 4px, 4px, true)
+        background-image: none
+        background-color: darken(#64a0ca, 10%)
+
+      &.selected
+        background-image: none
+        background-color: #003359
+        border-color: #003359
       
 h2
   font-size: 24px
