@@ -11,7 +11,7 @@
   <tbody>
     <% @hits.each do |hit| %>
     <tr>
-      <td><%= hit.title %></td>
+      <td><%= link_to hit.title, edit_hit_path(hit) %></td>
       <td><%= hit.reporter.name %></td>
       <td><%= hit.media_outlet.name %></td>
       <td><%= hit.chapter.name %></td>

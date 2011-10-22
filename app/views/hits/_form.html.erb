@@ -17,12 +17,12 @@
   
   <div>
     <%= f.label :media_outlet_id %><br />
-    <%= f.text_field :media_outlet_id, :class => "outlet text" %>
+    <%= f.select :media_outlet_id, options_from_collection_for_select(@media_outlets, "id", "name"), :class => "outlet text" %>
   </div>
   
   <div>
     <%= f.label :reporter_id %><br />
-    <%= f.text_field :reporter_id, :class => "reporter text" %>
+    <%= f.select :reporter_id, options_from_collection_for_select(@reporters, "id", "name"), :class => "outlet text" %>
   </div>
   
   <div>
@@ -42,12 +42,12 @@
   
   <div>
     <%= f.label :chapter_id %><br />
-    <%= f.text_field :chapter_id, :class => "chapter text" %>
+    <%= f.select :chapter_id, options_from_collection_for_select(@chapters, "id", "name"), :class => "outlet text" %>
   </div>
 
   <div>
     <%= f.label :press_release_id %><br />
-    <%= f.text_field :press_release_id, :class => "press_release text" %>
+    <%= f.select :press_release_id, options_from_collection_for_select(@press_releases, "id", "title"), :class => "outlet text" %>
   </div>
   
   <div>

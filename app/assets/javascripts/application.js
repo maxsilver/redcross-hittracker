@@ -13,35 +13,35 @@
 //= require_tree .
 
 $(function() {
-  $("input.outlet").tokenInput("/media_outlets.json", {
-    theme: "facebook",
-    tokenLimit: 1,
-    minChars: 0
-  });
+  // $("input.outlet").tokenInput("/media_outlets.json", {
+  //   theme: "facebook",
+  //   tokenLimit: 1,
+  //   minChars: 0
+  // });
 
-  $("input.reporter").tokenInput("/reporters.json", {
-    theme: "facebook",
-    tokenLimit: 1,
-    minChars: 0
-  });
+  // $("input.reporter").tokenInput("/reporters.json", {
+  //   theme: "facebook",
+  //   tokenLimit: 1,
+  //   minChars: 0
+  // });
 
-  $("input.tags").tokenInput("/tags.json", {
-    theme: "facebook",
-    preventDuplicates: true
-  });
+  // $("input.tags").tokenInput("/tags.json", {
+  //   theme: "facebook",
+  //   preventDuplicates: true
+  // });
   
-  $("input.chapter").tokenInput("/chapters.json", {
-    theme: "facebook",
-    tokenLimit: 1,
-    minChars: 0
-  });
-  
-  $("input.press_release").tokenInput("/press_releases.json", {
-    theme: "facebook",
-    tokenLimit: 1,
-    propertyToSearch: "title",
-    minChars: 0
-  });
+  // $("input.chapter").tokenInput("/chapters.json", {
+  //   theme: "facebook",
+  //   tokenLimit: 1,
+  //   minChars: 0
+  // });
+  // 
+  // $("input.press_release").tokenInput("/press_releases.json", {
+  //   theme: "facebook",
+  //   tokenLimit: 1,
+  //   propertyToSearch: "title",
+  //   minChars: 0
+  // });
   
   $("input.reported_on, input.released_on").datepicker({
     dateFormat: 'yy-mm-dd'
