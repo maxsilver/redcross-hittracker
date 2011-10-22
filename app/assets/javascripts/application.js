@@ -48,4 +48,14 @@ $(function() {
   });
 
   $("table").tablesorter();
+  
+  $("nav .media .new").click(function() {
+    $(this).parents(".media").first().find(".new-menu").toggle();
+    return false;
+  });
+  $(".new-menu").hide();
+  
+  $(document).click(function() {
+    $(".new-menu").hide();
+  });
 });

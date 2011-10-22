@@ -83,7 +83,42 @@ nav
         background-image: none
         background-color: #003359
         border-color: #003359
+
+    .new-menu
+      position: absolute
+      right: 0
+      top: 50px
+      width: 180px
+      background-color: #64a0c8
+      border: 1px solid darken(#64a0c8, 20%)
+      +border-radius
+
+      .tip-border, .tip
+        position: absolute
+        top: -15px
+        right: -1px
+        width: 0
+        height: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 15px solid darken(#64a0c8, 20%)
+        border-top: 0
+
+      .tip
+        top: -13px
+        border-bottom-color: #64a0c8
+
+      a
+        display: block
+        padding: 10px
+        color: #fff
+        text-decoration: none
       
+        &:hover
+          background-color: #003359
+      
+    
+
 h2
   font-size: 24px
   font-weight: bold
