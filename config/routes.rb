@@ -11,7 +11,7 @@ HitTracker::Application.routes.draw do
   
   resources :press_releases
   
-  get 'locations' => "locations#index"
+  match 'locations' => "locations#index"
   resources :regions
   resources :chapters
   

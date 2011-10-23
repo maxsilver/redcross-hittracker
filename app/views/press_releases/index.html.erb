@@ -7,14 +7,10 @@
   <tbody>
     <tr class="filters">
       <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
-      
-      <% if !PressRelease.earliest.nil? && !PressRelease.latest.nil? %>
       <td class="released_on">
-        <%= text_field_tag :start_on, PressRelease.earliest.released_on.to_s(:db), :class => "start_on" %> -
-        <%= text_field_tag :end_on, PressRelease.latest.released_on.to_s(:db), :class => "end_on" %>
+        <%= text_field_tag :start_on, first_press_release_date, :class => "start_on" %> -
+        <%= text_field_tag :end_on, last_press_release_date, :class => "end_on" %>
       </td>
-    <% end %>
-
       <td class="tags"><%= text_field_tag :tags, nil, :placeholder => "All Tags" %></td>
     </tr>
     <% @press_releases.each do |press_release| %>

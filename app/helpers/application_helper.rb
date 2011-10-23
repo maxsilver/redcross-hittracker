@@ -18,4 +18,12 @@ module ApplicationHelper
   def media_outlet_options
     MediaOutlet.all
   end
+  
+  def first_press_release_date
+    PressRelease.earliest.released_on.to_s(:db) if PressRelease.earliest
+  end
+  
+  def last_press_release_date
+    PressRelease.latest.released_on.to_s(:db) if PressRelease.latest
+  end
 end

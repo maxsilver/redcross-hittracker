@@ -4,20 +4,17 @@
     <th class="email">Email</th>
   </thead>
   <tbody>
-    <tr class="filters">
-      <td colspan="2" class="name"><%= text_field_tag :name, nil, :placeholder => "All Users" %></td>
-    </tr>
-    <% @users.each do |user| %>
-    <tr class="<%= cycle :even, :odd %>">
-      <td>
-        <% if current_user.admin? %>
-          <%= link_to user.name, edit_user_path(user) %>
-        <% else %>
-          <%= user.name %>
-        <% end %>
-      </td>
-      <td><%= mail_to user.email %></td>
-    </tr>
-    <% end %>
+  <% @users.each do |user| %>
+  <tr class="<%= cycle :even, :odd %>">
+    <td>
+      <% if current_user.admin? %>
+        <%= link_to user.name, edit_user_path(user) %>
+      <% else %>
+        <%= user.name %>
+      <% end %>
+    </td>
+    <td><%= mail_to user.email %></td>
+  </tr>
+  <% end %>
   </tbody>
 </table>

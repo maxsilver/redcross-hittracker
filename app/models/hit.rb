@@ -21,4 +21,12 @@ class Hit < ActiveRecord::Base
   belongs_to :user
 
   acts_as_taggable
+  
+  def self.earliest
+    order("reported_on ASC").first
+  end
+
+  def self.latest
+    order("reported_on ASC").last
+  end
 end
