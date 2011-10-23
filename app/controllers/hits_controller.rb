@@ -4,7 +4,7 @@ class HitsController < ApplicationController
 
   def index
     if params[:commit]
-      search_params = params['hit']
+      search_params = params['hit'].clone
       tags = params['hit']['tags']
       search_params.delete("tags")
       if tags && tags.length > 0 && tags.first.length > 0

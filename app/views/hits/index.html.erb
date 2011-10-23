@@ -19,7 +19,7 @@
         <%= text_field_tag "hit[reported_on_greater_than_or_equal_to]",  (params[:hit][:reported_on_greater_than_or_equal_to] if params[:hit]), :class => "start_on" %> -
         <%= text_field_tag "hit[reported_on_less_than_or_equal_to]",  (params[:hit][:reported_on_less_than_or_equal_to] if params[:hit]), :class => "end_on" %>
       </td>
-      <td class="tags"><%= text_field "hit[tags]", (params[:hit][:tags] if params[:hit]), :placeholder => "All Tags" %></td>
+      <td class="tags"><%= text_field_tag "hit[tags]", (params[:hit][:tags] if params[:hit]), :placeholder => "All Tags" %></td>
       <td class=""><%= submit_tag "Search" %></td>
     </tr>
     <% end %>
