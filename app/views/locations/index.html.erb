@@ -22,7 +22,7 @@
     </tr>
     <% region.chapters.each do |chapter| %>
     <tr class="chapter <%= cycle :even, :odd %>">
-      <td class="name"><%= link_to chapter.name, edit_chapter_path(chapter) %></td>
+      <td class="name"><%= link_to chapter.name, chapter_path(chapter) %> (<%= link_to "edit", edit_chapter_path(chapter) %>)</td>
       <td class="count"><%= chapter.hits.during(@date_range).count %></td>
     </tr>
     <% end %>
