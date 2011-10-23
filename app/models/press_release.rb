@@ -4,8 +4,6 @@ class PressRelease < ActiveRecord::Base
   validates :title, :presence => true
   validates :released_on, :presence => true
 
-  default_scope where(:deleted_at => nil)
-
   belongs_to :user
 
   parse_date :released_on

@@ -4,26 +4,26 @@ module ApplicationHelper
   end
 
   def reporter_options
-    Reporter.all
+    Reporter.not_deleted
   end
   
   def chapter_options
-    Chapter.all
+    Chapter.not_deleted
   end
   
   def press_release_options
-    PressRelease.all
+    PressRelease.not_deleted
   end
   
   def media_outlet_options
-    MediaOutlet.all
+    MediaOutlet.not_deleted
   end
   
   def first_press_release_date
-    PressRelease.earliest.released_on.to_s(:db) if PressRelease.earliest
+    PressRelease.not_deleted.earliest.released_on.to_s(:db) if PressRelease.earliest
   end
   
   def last_press_release_date
-    PressRelease.latest.released_on.to_s(:db) if PressRelease.latest
+    PressRelease.not_deleted.latest.released_on.to_s(:db) if PressRelease.latest
   end
 end
