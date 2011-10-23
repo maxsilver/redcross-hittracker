@@ -4,6 +4,7 @@
   <% else %>
     <% if current_user.admin? %>
       <%= link_to "Delete this Hit", hit, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+      <%= link_to "Duplicate this Hit", duplicate_hit_path(hit), :method => "get", :confirm => "Are you sure?", :class => "duplicate" %>
     <% end %>
     <h2>Edit this Hit</h2>
   <% end %>

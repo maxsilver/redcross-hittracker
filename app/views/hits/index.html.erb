@@ -26,17 +26,21 @@
 
     <% @hits.each do |hit| %>
     <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to hit.title, edit_hit_path(hit) %></td>
+      <td><%= link_to hit.title, hit_path(hit) %> (<%= link_to "edit", edit_hit_path(hit) %>)</td>
       <td><%= link_to hit.reporter.name, hit.reporter %></td>
       <td><%= link_to hit.media_outlet.name, hit.media_outlet %></td>
       <td><%= link_to hit.chapter.name, hit.chapter %></td>
       <td><%= hit.reported_on %></td>
-      <td colspan="2"><%= hit.tag_list %></td>
+      <td colspan="2">
+        <% hit.tags.each do |tag| %>
+          <%= link_to tag, hits_path("hit[tags]" => tag.name, :commit => "Search") %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
 
   </tbody>
-  
+
 </table>
 
 

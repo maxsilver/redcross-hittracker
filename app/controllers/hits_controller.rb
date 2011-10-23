@@ -23,6 +23,15 @@ class HitsController < ApplicationController
   def show
     @hit = Hit.find params[:id]
   end
+  
+  def duplicate
+    hit           = Hit.find(params[:id])
+    @hit          = hit.dup
+    debugger
+    @hit.tag_list = hit.tags
+    @hit.save
+    render :edit
+  end
 
   def new
     @hit = Hit.new

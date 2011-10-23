@@ -10,6 +10,7 @@ class SubscriptionMailer < ActionMailer::Base
     @greeting = "A new Hit has been created in the system"
     @hit = hit
 
+    attachments.inline['logo.gif'] = File.read(Rails.root.join("app/assets/images/logo.gif"))
     mail to: user.email
   end
 end

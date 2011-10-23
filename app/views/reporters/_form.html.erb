@@ -11,14 +11,14 @@
   <div class="errors">
     <%= reporter.errors.full_messages if reporter.errors.any? %>
   </div>
-  
+
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  
+
   <div class="name">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  
+
     <div class="email">
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -28,17 +28,22 @@
     <%= f.label :phone %>
     <%= f.text_field :phone %>
   </div>
-  
+
   <div class="fax">
     <%= f.label :fax %>
     <%= f.text_field :fax %>
   </div>
-  
+
+  <div class="tags">
+    <%= f.label :tag_list, "Tags" %>
+    <%= f.text_field :tag_list, :class => "text" %>
+  </div>
+
   <div class="comment">
     <%= f.label :comment %>
     <%= f.text_area :comment %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit "Save" %>
   </div>

@@ -20,8 +20,11 @@ form
   h2
     margin-bottom: 20px
 
-  .delete
+  .delete, .duplicate
     +float-right
+  .duplicate
+    margin-right: 10px
+    color: blue
 
   label
     font-weight: bold
@@ -45,7 +48,7 @@ form.hit
     margin-bottom: 1.5em
 
 form.reporter
-  .name, .phone
+  .name, .phone, .tags
     +column(9)
   .email, .fax
     +push(1)
@@ -86,7 +89,7 @@ form.user
   min-width: 380px
   div
     width: auto
-  .email, .fax, .media_type, .contact_phone, .contact_name
+  .email, .fax, .media_type, .contact_phone, .contact_name, .released_on, .tags
     +push(0)
   input, textarea
     width: 80%
