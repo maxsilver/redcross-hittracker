@@ -46,8 +46,6 @@ $(function() {
   $(".reported_on input, .released_on input, input.start_on, input.end_on, .datetime").datepicker({
     dateFormat: 'yy-mm-dd'
   });
-
-  $("table").tablesorter();
   
   $("nav .media .new").click(function() {
     $(this).parents(".media").first().find(".new-menu").toggle();
