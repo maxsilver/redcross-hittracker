@@ -21,7 +21,6 @@ class HitsController < ApplicationController
 
   def update
     @hit = Hit.find(params[:id])
-
     if @hit.update_attributes(params[:hit])
       redirect_to hits_path, :notice => "Updated successully!"
     else
@@ -38,14 +37,18 @@ class HitsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    @hit = Hit.find(params[:id])
+    @hit.destroy
+    redirect_to hits_path
+  end
 
-
+private
   def grab_required_options
     @reporters = Reporter.all
     @chapters = Chapter.all
     @press_releases = PressRelease.all
     @media_outlets = MediaOutlet.all
   end
-
-
 end
