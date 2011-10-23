@@ -1,36 +1,38 @@
 @import "compass"
 @import "blueprint"
 
-form
-  +border-radius()
-  +push(1)
-  +column(20)
-  padding: 20px 40px
-  background-color: #ccc
+.sessions.new, .passwords.new
 
-  input[type=text], input[type=password], select
-    width: 100%
+  form
+    +border-radius()
+    +push(1)
+    +column(20)
+    padding: 20px 40px
+    background-color: #ccc
 
-  textarea
-    width: 95%
-    height: 100px
+    input[type=text], input[type=password], select
+      width: 100%
 
-  h2
-    margin-bottom: 20px
+    textarea
+      width: 95%
+      height: 100px
 
-  .delete
-    +float-right
+    h2
+      margin-bottom: 20px
 
-  label
-    font-weight: bold
-    display:  block
-    margin-bottom: 5px
+    .delete
+      +float-right
 
-  .actions
-    margin-top: 20px
-    float: right
-    input
-      width: 100px
+    label
+      font-weight: bold
+      display:  block
+      margin-bottom: 5px
+
+    .actions
+      margin-top: 20px
+      float: right
+      input
+        width: 100px
 
 form.hit
   .title, .media_outlet, .tags, .chapter
@@ -57,6 +59,8 @@ form.media_outlet
   .email, .contact_name
     +push(1)
     +column(9)
+  .comments
+    clear: both
 
 form.press_release
   .title
@@ -87,6 +91,7 @@ form.user
   input, textarea
     width: 80%
   .comment
+    clear: both
     width: 350px
   .actions
     width: 100px

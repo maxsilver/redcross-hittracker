@@ -7,12 +7,18 @@
   </tr>
   <tr>
     <td>Created By:</td>
-    <td><%= @hit.user %></td>
+    <td><%= @hit.user.name %></td>
   </tr>
   <tr>
     <td>Reported On: </td>
     <td><%= @hit.reported_on %></td>
   </tr>
+
+  <tr>
+    <td>Press Release: </td>
+    <td><%= @hit.press_release.title %></td>
+  </tr>
+
   <tr>
     <td>Media Outlet: </td>
     <td><%= @hit.media_outlet.name %></td>
@@ -23,10 +29,6 @@
     <td><%= @hit.reporter.name%></td>
   </tr>
 
-  <tr>
-    <td>Press Release: </td>
-    <td><%= @hit.press_release.title %></td>
-  </tr>
 
   <tr>
     <td>Chapter: </td>
