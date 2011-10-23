@@ -4,7 +4,14 @@ class HitsController < ApplicationController
 
   def index
     if params[:commit]
-      @search = Hit.search(params[:hit])
+      search_params = params['hit']
+      tags = params['hit']['tags']
+      search_params.delete("tags")
+      if tags && tags.length > 0 && tags.first.length > 0
+        @search = Hit.tagged_with(tags).search(search_params)
+      else
+        @search = Hit.search(search_params)
+      end
       @hits = @search.all
     else
       @hits = Hit.all
@@ -37,7 +44,7 @@ class HitsController < ApplicationController
       render action: "edit"
     end
   end
-  
+
   def destroy
     @hit = Hit.find(params[:id])
     @hit.destroy
