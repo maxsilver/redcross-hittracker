@@ -1,16 +1,57 @@
-A new media hit has been created:
+<p>A new media hit has been created:</p>
 
-Name: <%= @hit.title %>
-Created By: <%= @hit.user %>
-Reported On: <%= @hit.reported_on %>
-Media Outlet: <%= @hit.media_outlet.name %>
-Reporter: <%= @hit.reporter.name%>
-Press Release: <%= @hit.press_release.title %>
-Chapter: <%= @hit.chapter.name %>
+<table border="0">
+  <tr>
+    <td>Name:</td>
+    <td><%= @hit.title %></td>
+  </tr>
+  <tr>
+    <td>Created By:</td>
+    <td><%= @hit.user.name %></td>
+  </tr>
+  <tr>
+    <td>Reported On: </td>
+    <td><%= @hit.reported_on %></td>
+  </tr>
 
-Content: <%= @hit.content %>
-Tone: <%= @hit.tone %>
-Notes: <%= @hit.notes %>
+  <tr>
+    <td>Press Release: </td>
+    <td><%= @hit.press_release.title %></td>
+  </tr>
 
-To view this media hit, visit:
-<%= hit_url(@hit.id) %>
+  <tr>
+    <td>Media Outlet: </td>
+    <td><%= @hit.media_outlet.name %></td>
+  </tr>
+
+  <tr>
+    <td>Reporter: </td>
+    <td><%= @hit.reporter.name%></td>
+  </tr>
+
+
+  <tr>
+    <td>Chapter: </td>
+    <td><%= @hit.chapter.name %></td>
+  </tr>
+
+  <tr>
+    <td>Content: </td>
+    <td><%= @hit.content %></td>
+  </tr>
+
+  <tr>
+    <td>Tone: </td>
+    <td><%= @hit.tone %></td>
+  </tr>
+
+  <tr>
+    <td>Notes: </td>
+    <td><%= @hit.notes %></td>
+  </tr>
+</table>
+
+<div id="name">
+  To view this media hit, visit:
+  <%= hit_url(@hit.id) %>
+</div>

@@ -54,11 +54,13 @@ form.reporter
     clear: both
 
 form.media_outlet
-  .name, .contact_name
+  .name,  .media_type, .contact_phone
     +column(9)
-  .media_type, .contact_phone
+  .email, .contact_name
     +push(1)
     +column(9)
+  .comments
+    clear: both
 
 form.press_release
   .title
@@ -84,11 +86,12 @@ form.user
   min-width: 380px
   div
     width: auto
-  .email, .fax, .media_type, .contact_phone
+  .email, .fax, .media_type, .contact_phone, .contact_name
     +push(0)
   input, textarea
     width: 80%
   .comment
+    clear: both
     width: 350px
   .actions
     width: 100px

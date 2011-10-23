@@ -26,4 +26,8 @@ module ApplicationHelper
   def last_press_release_date
     PressRelease.not_deleted.latest.released_on.to_s(:db) if PressRelease.latest
   end
+  
+  def name_of(user)
+    user.name.blank? ? "Unnamed User" : user.name
+  end
 end
