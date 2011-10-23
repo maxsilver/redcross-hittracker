@@ -25,7 +25,7 @@ class HitsController < ApplicationController
   def create
     @hit = current_user.hits.build(params[:hit])
     if @hit.save
-      # User.subscribed.each { |u| SubscriptionMailer.new_hit(@hit, current_user).deliver }
+      (User.subscribed.all - [current_user]).each { |u| SubscriptionMailer.new_hit(@hit, u).deliver }
       redirect_to hits_path
     else
       render :new
