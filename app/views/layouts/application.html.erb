@@ -11,7 +11,7 @@
     <header>
       <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
       <h1>Media Hit Tracker</h1>
-      <%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %>
+      <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <a href="#">Profile</a></p>
     </header>
     
     <% if current_user %>
