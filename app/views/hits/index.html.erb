@@ -11,18 +11,19 @@
 
     <%= form_for :hit, :method => :get do |f| %>
     <tr class="filters">
-      <td class="title"><%= f.text_field :title_contains, :placeholder => "All Hits" %></td>
-      <td class="reporter"><%= f.collection_select :reporter_id_equals, reporter_options, :id, :name, :include_blank => true %></td>
-      <td class="media_outlet"><%= f.collection_select :media_outlet_id_equals, media_outlet_options, :id, :name, :include_blank => true %></td>
-      <td class="chapter"><%= f.collection_select :chapter_id_equals, chapter_options, :id, :name, :include_blank => true %></td>
+      <td class="title"><%= text_field_tag "hit[title_contains]", (params[:hit][:title_contains] if params[:hit]), :placeholder => "All Hits" %></td>
+      <td class="reporter"><%= select_tag "hit[reporter_id_equals]", options_from_collection_for_select(reporter_options, "id", "name",  (params[:hit][:reporter_id_equals] if params[:hit])), :include_blank => true, :class => "outlet text" %></td>
+      <td class="media_outlet"><%= select_tag "hit[media_outlet_id_equals]", options_from_collection_for_select(media_outlet_options, "id", "name",  (params[:hit][:media_outlet_id_equals] if params[:hit])), :include_blank => true, :class => "outlet text" %></td>
+      <td class="chapter"><%= select_tag "hit[chapter_id_equals]", options_from_collection_for_select(chapter_options, "id", "name",  (params[:hit][:chapter_id_equals] if params[:hit])), :include_blank => true, :class => "outlet text" %></td>
       <td class="reported_on">
-        <%= f.text_field :reported_on_greater_than_or_equal_to, :class => "start_on" %> -
-        <%= f.text_field :reported_on_less_than_or_equal_to, :class => "end_on" %>
+        <%= text_field_tag "hit[reported_on_greater_than_or_equal_to]",  (params[:hit][:reported_on_greater_than_or_equal_to] if params[:hit]), :class => "start_on" %> -
+        <%= text_field_tag "hit[reported_on_less_than_or_equal_to]",  (params[:hit][:reported_on_less_than_or_equal_to] if params[:hit]), :class => "end_on" %>
       </td>
-      <td class="tags"><!--<%= f.text_field :tags, :placeholder => "All Tags" %>--></td>
-      <td class=""><%= f.submit "Search" %></td>
+      <td class="tags"><%= text_field_tag "hit[tags]", (params[:hit][:tags] if params[:hit]), :placeholder => "All Tags" %></td>
+      <td class=""><%= submit_tag "Search" %></td>
     </tr>
     <% end %>
+
     <% @hits.each do |hit| %>
     <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to hit.title, edit_hit_path(hit) %></td>
@@ -33,5 +34,17 @@
       <td><%= hit.tag_list %></td>
     </tr>
     <% end %>
+
   </tbody>
 </table>
+
+
+<% if @hits && @hits.length == 0 %>
+  <strong>
+    <% if params[:hit] %>
+      Sorry, no hits with those search parameters to display
+    <% else %>
+      Sorry, no hits currently in the system. Perhaps you would like to <%= link_to "make a hit", new_hit_path %>?
+    <% end %>
+  </strong>
+<% end %>

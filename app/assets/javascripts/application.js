@@ -46,13 +46,13 @@ $(function() {
   $(".reported_on input, .released_on input, input.start_on, input.end_on, .datetime").datepicker({
     dateFormat: 'yy-mm-dd'
   });
-  
+
   $("nav .media .new").click(function() {
     $(this).parents(".media").first().find(".new-menu").toggle();
     return false;
   });
   $(".new-menu").hide();
-  
+
   $(document).click(function() {
     $(".new-menu").hide();
   });
