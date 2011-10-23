@@ -2,7 +2,10 @@
 <html>
 <head>
   <title>Media Hit Tracker</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "application" %>
+  <!--[if IE]>
+  <%= stylesheet_link_tag "ie" %>
+  <![endif]-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
