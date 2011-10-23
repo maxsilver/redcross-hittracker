@@ -7,7 +7,7 @@
   <tbody>
     <% @press_releases.each do |press_release| %>
     <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to press_release.title, edit_press_release_path(press_release) %></td>
+      <td><%= link_to press_release.title, press_release_path(press_release) %> (<%= link_to "edit", edit_press_release_path(press_release) %>)</td>
       <td><%= press_release.released_on.to_s(:db) %></td>
       <td><%= "foo, bar, baz" %></td>
     </tr>

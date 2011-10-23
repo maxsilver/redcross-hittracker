@@ -5,9 +5,9 @@ class PressRelease < ActiveRecord::Base
   validates :released_on, :presence => true
 
   belongs_to :user
-
+  has_many :hits
   parse_date :released_on
-  
+
   def self.earliest
     order("released_on ASC").first
   end
