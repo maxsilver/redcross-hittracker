@@ -20,13 +20,13 @@
         <%= text_field_tag "hit[reported_on_less_than_or_equal_to]",  (params[:hit][:reported_on_less_than_or_equal_to] if params[:hit]), :class => "end_on" %>
       </td>
       <td class="tags"><%= text_field_tag "hit[tags]", (params[:hit][:tags] if params[:hit]), :placeholder => "All Tags" %></td>
-      <td class=""><%= submit_tag "Search" %></td>
+      <td class=""><%= submit_tag "Filter" %></td>
     </tr>
     <% end %>
 
     <% @hits.each do |hit| %>
     <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to hit.title, hit_path(hit) %> (<%= link_to "edit", edit_hit_path(hit) %>)</td>
+      <td><%= link_to hit.title, hit_path(hit) %> </td>
       <td><%= link_to hit.reporter.name, hit.reporter %></td>
       <td><%= link_to hit.media_outlet.name, hit.media_outlet %></td>
       <td><%= link_to hit.chapter.name, hit.chapter %></td>
