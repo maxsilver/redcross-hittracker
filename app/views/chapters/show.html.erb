@@ -1,8 +1,31 @@
-<h3><strong><%= @chapter.name %></strong></h3>
-<%= link_to "Edit this Chapter", edit_chapter_path(@chapter) %>
+<div class="left">
+  <h3><strong><%= @chapter.name %></strong></h3>
+  <br /><br />
 
-<br />
-<ul>
 
-</ul>
+  <h4>Recent Media Hits</h4>
+  <table class="hits">
+    <thead>
+      <th class="title">Title</th>
+      <th class="details">Details</th>
+    </thead>
+    <tbody>
+      <% @chapter.hits.most_recent.each do |hit| %>
+      <tr class="<%= cycle :even, :odd %>">
+        <td><%= link_to hit.title, edit_hit_path(hit) %></td>
+        <td>
+          <%= link_to hit.reporter.name, hit.reporter %><br />
+          <%= link_to hit.media_outlet.name, hit.media_outlet %><br />
+          <%= hit.reported_on %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br /><br />
+  <%= link_to "See All Media Hits about '#{@chapter.name}'", hits_path("hit[chapter_id_equals]" => @chapter.id) %>
+</div>
 
+<div class="right sidebar">
+  <%= render :partial => "form", :locals => { :chapter => @chapter } %>
+</div>

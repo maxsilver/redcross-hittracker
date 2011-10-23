@@ -1,10 +1,37 @@
-<h3><strong><%= @media_outlet.name %></strong></h3>
-<%= link_to "Edit this Media Outlet", edit_media_outlet_path(@media_outlet) %>
+<div class="left">
+  <h3><strong><%= @media_outlet.name %></strong></h3>
+  <br /><br />
 
-<br />
-<ul>
-  <li>Media Type : <%= @media_outlet.media_type %></li>
-  <li>Contact Name : <%= @media_outlet.contact_name %></li>
-  <li>Contact Phone : <%= @media_outlet.contact_phone %></li>
-</ul>
+  <ul>
+    <li>Media Type : <%= @media_outlet.media_type %></li>
+    <li>Contact Name : <%= @media_outlet.contact_name %></li>
+    <li>Contact Phone : <%= @media_outlet.contact_phone %></li>
+  </ul>
+  <br /><br />
 
+  <h4>Recent Media Hits</h4>
+  <table class="hits">
+    <thead>
+      <th class="title">Title</th>
+      <th class="details">Details</th>
+    </thead>
+    <tbody>
+      <% @media_outlet.hits.most_recent.each do |hit| %>
+      <tr class="<%= cycle :even, :odd %>">
+        <td><%= link_to hit.title, edit_hit_path(hit) %></td>
+        <td>
+          <%= link_to hit.reporter.name, hit.reporter %><br />
+          <%= link_to hit.chapter.name, hit.chapter %><br />
+          <%= hit.reported_on %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br /><br />
+  <%= link_to "See All Media Hits from '#{@media_outlet.name}'", hits_path("hit[media_outlet_id_equals]" => @media_outlet.id) %>
+</div>
+
+<div class="right sidebar">
+  <%= render :partial => "form", :locals => { :media_outlet => @media_outlet } %>
+</div>

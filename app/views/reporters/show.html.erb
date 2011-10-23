@@ -1,7 +1,5 @@
 <div class="left">
   <h3><strong><%= @reporter.name %></strong></h3>
-  <%= link_to "Edit this reporter", edit_reporter_path(@reporter) %>
-
   <br /><br />
 
   <ul>
@@ -10,15 +8,29 @@
     <li>Fax : <%= @reporter.fax %></li>
     <li>Comment : <%= @reporter.comment %></li>
   </ul>
-
   <br /><br />
 
-  <h4>Media Hits</h4>
-  <ul>
-    <% @reporter.hits.each do |hit| %>
-      <li><%= link_to hit.title, hit %></li>
-    <% end %>
-  </ul>
+  <h4>Recent Media Hits</h4>
+  <table class="hits">
+    <thead>
+      <th class="title">Title</th>
+      <th class="details">Details</th>
+    </thead>
+    <tbody>
+      <% @reporter.hits.most_recent.each do |hit| %>
+      <tr class="<%= cycle :even, :odd %>">
+        <td><%= link_to hit.title, edit_hit_path(hit) %></td>
+        <td>
+          <%= link_to hit.media_outlet.name, hit.media_outlet %><br />
+          <%= link_to hit.chapter.name, hit.chapter %><br />
+          <%= hit.reported_on %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br /><br />
+  <%= link_to "See All Media Hits by '#{@reporter.name}'", hits_path("hit[reporter_id_equals]" => @reporter.id) %>
 </div>
 
 <div class="right sidebar">
