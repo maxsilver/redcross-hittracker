@@ -10,6 +10,11 @@
 
   <%= user.errors.full_messages if user.errors.any? %>
 
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name, :autocomplete => "off" %>
+  </div>
+
   <div class="email">
     <%= f.label :email %>
     <%= f.text_field :email, :autocomplete => "off" %>

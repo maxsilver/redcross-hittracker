@@ -8,8 +8,5 @@ class User < ActiveRecord::Base
   has_many :press_releases
   has_many :reporters
   has_many :media_outlets
-  
-  def name 
-    "Samuel Bowles"
-  end
+
 end
