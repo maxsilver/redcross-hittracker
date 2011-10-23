@@ -21,7 +21,6 @@ class ChaptersController < ApplicationController
   
   def update
     @chapter = Chapter.find(params[:id])
-    
     if @chapter.update_attributes(params[:chapter])
       redirect_to locations_path, :notice => "Updated successully!"
     else
@@ -31,11 +30,16 @@ class ChaptersController < ApplicationController
   
   def create
     @chapter = Chapter.new(params[:chapter])
-    
     if @chapter.save
       redirect_to locations_path, :notice => "Created successully!"
     else
       render action: "new"
     end
+  end
+
+  def destroy
+    @chapter = Chapter.find(params[:id])
+    @chapter.destroy
+    redirect_to locations_path
   end
 end

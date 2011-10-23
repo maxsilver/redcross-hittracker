@@ -2,6 +2,7 @@
   <% if media_outlet.new_record? %>
     <h2>Add a Media Outlet</h2>
   <% else %>
+    <%= link_to "Delete this Media Outlet", media_outlet, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
     <h2>Edit this Media Outlet</h2>
   <% end %>
 
