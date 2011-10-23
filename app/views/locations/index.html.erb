@@ -16,16 +16,12 @@
   </thead>
   <tbody>
     <% @regions.each do |region| %>
-    <tr class="region">
-      <td class="name"><%= region.name %></td>
-      <td class="count"><%= region.hits.during(@date_range).count %></td>
-    </tr>
-    <% region.chapters.each do |chapter| %>
-    <tr class="chapter <%= cycle :even, :odd %>">
-      <td class="name"><%= link_to chapter.name, chapter_path(chapter) %> (<%= link_to "edit", edit_chapter_path(chapter) %>)</td>
-      <td class="count"><%= chapter.hits.during(@date_range).count %></td>
-    </tr>
-    <% end %>
+      <% region.chapters.each do |chapter| %>
+      <tr class="chapter <%= cycle :even, :odd %>">
+        <td class="name"><%= link_to chapter.name, chapter_path(chapter) %> (<%= link_to "edit", edit_chapter_path(chapter) %>)</td>
+        <td class="count"><%= chapter.hits.during(@date_range).count %></td>
+      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
