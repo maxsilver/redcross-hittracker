@@ -27,9 +27,9 @@
     <% @hits.each do |hit| %>
     <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to hit.title, edit_hit_path(hit) %></td>
-      <td><%= hit.reporter.name %></td>
-      <td><%= hit.media_outlet.name %></td>
-      <td><%= hit.chapter.name %></td>
+      <td><%= link_to hit.reporter.name, hit.reporter %></td>
+      <td><%= link_to hit.media_outlet.name, hit.media_outlet %></td>
+      <td><%= link_to hit.chapter.name, hit.chapter %></td>
       <td><%= hit.reported_on %></td>
       <td><%= hit.tag_list %></td>
     </tr>
