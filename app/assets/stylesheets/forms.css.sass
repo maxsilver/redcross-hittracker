@@ -81,10 +81,16 @@ form.user
 
 
 .sidebar form
-  width: 100%
-  .email, .fax
+  width: auto
+  min-width: 380px
+  div
+    width: auto
+  .email, .fax, .media_type, .contact_phone
     +push(0)
   input, textarea
     width: 80%
-
+  .comment
+    width: 350px
+  .actions
+    width: 100px
 

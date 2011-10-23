@@ -12,6 +12,7 @@ class Hit < ActiveRecord::Base
   scope :with_media_outlet, lambda { |media_outlet_id| where(:media_outlet => media_outlet_id )}
   scope :with_chapter, lambda { |chapter_id| where(:chapter => chapter_id )}
   scope :with_title, lambda { |title| where(:title => title )}
+  scope :most_recent, order("reported_on desc").limit(10)
 
   belongs_to :reporter
   belongs_to :press_release
@@ -20,7 +21,7 @@ class Hit < ActiveRecord::Base
   belongs_to :user
 
   acts_as_taggable
-  
+
   def self.earliest
     order("reported_on ASC").first
   end
