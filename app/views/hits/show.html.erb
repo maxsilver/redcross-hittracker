@@ -1,15 +1,27 @@
-<h2>Media Hit:  <%= @hit.title %></h2>
+<h2>Media Hit</h2>
+
+<div class="title">
+  <%= @hit.title %>
+</div>
 
 <div class="reported_on">
   Reported on <%= @hit.reported_on %>
 </div>
 
 <div class="media_outlet">
-  Reported by <%= @hit.media_outlet.name %>
+  Media Outlet: <%= @hit.media_outlet.name %>
 </div>
 
 <div class="reporter">
-  Authored by <%= @hit.reporter.name %>
+  Reporter: <%= @hit.reporter.name %>
+</div>
+
+<div class="author">
+  Author: <%= @hit.user.name %>
+</div>
+
+<div class="created_at">
+  Created: <%= @hit.created_at %>
 </div>
 
 <div class="content">
