@@ -2,6 +2,7 @@
   <% if hit.new_record? %>
     <h2>Add a Hit</h2>
   <% else %>
+    <%= link_to "Delete this Hit", hit, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
     <h2>Edit this Hit</h2>
   <% end %>
 

@@ -2,6 +2,7 @@
   <% if chapter.new_record? %>
     <h2>Add a Chapter</h2>
   <% else %>
+    <%= link_to "Delete this Chapter", chapter, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
     <h2>Edit this Chapter</h2>
   <% end %>
 

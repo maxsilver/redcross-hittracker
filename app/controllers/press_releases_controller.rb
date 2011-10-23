@@ -21,7 +21,6 @@ class PressReleasesController < ApplicationController
   
   def update
     @press_release = PressRelease.find(params[:id])
-    
     if @press_release.update_attributes(params[:press_release])
       redirect_to press_releases_path, :notice => "Updated successully!"
     else
@@ -31,11 +30,16 @@ class PressReleasesController < ApplicationController
   
   def create
     @press_release = PressRelease.new(params[:press_release])
-    
     if @press_release.save
       redirect_to press_releases_path, :notice => "Created successully!"
     else
       render action: "new"
     end
+  end
+
+  def destroy
+    @press_release = PressRelease.find(params[:id])
+    @press_release.destroy
+    redirect_to press_releases_path
   end
 end
