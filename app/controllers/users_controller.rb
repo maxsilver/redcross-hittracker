@@ -35,10 +35,12 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    if @user != current_user
+      @user.destroy
+    end
     redirect_to users_path
   end
-  
+
   def profile
     @user = current_user
     if request.put?
