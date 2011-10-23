@@ -44,7 +44,7 @@ $(function() {
   //   minChars: 0
   // });
 
-  $("input.reported_on, input.released_on, input.start_on, input.end_on").datepicker({
+  $(".reported_on input, .released_on input, input.start_on, input.end_on").datepicker({
     dateFormat: 'yy-mm-dd'
   });
 
