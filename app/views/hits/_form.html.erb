@@ -17,12 +17,12 @@
   
   <div class="media_outlet">
     <%= f.label :media_outlet_id %>
-    <%= f.select :media_outlet_id, options_from_collection_for_select(@media_outlets, "id", "name"), :include_blank => true, :class => "outlet text" %>
+    <%= f.collection_select :media_outlet_id, @media_outlets, :id, :name, :include_blank => true %>
   </div>
   
   <div class="reporter">
     <%= f.label :reporter_id %>
-    <%= f.select :reporter_id, options_from_collection_for_select(@reporters, "id", "name"), :include_blank => true, :class => "outlet text" %>
+    <%= f.collection_select :reporter_id, @reporters, :id, :name, :include_blank => true %>
   </div>
   
   <div class="content">
@@ -37,17 +37,17 @@
   
   <div class="tone">
     <%= f.label :tone %>
-    <%= f.select :tone, [["Positive","positive"],["Neutral","neutral"],["Negative","negative"]], :include_blank => true %>
+    <%= f.select :tone, [["Positive","positive"], ["Neutral","neutral"], ["Negative","negative"]], :include_blank => true %>
   </div>
   
   <div class="chapter">
     <%= f.label :chapter_id %>
-    <%= f.select :chapter_id, options_from_collection_for_select(@chapters, "id", "name"), :include_blank => true, :class => "text" %>
+    <%= f.collection_select :chapter_id, @chapters, :id, :name, :include_blank => true, :class => "text" %>
   </div>
 
   <div class="press_release">
     <%= f.label :press_release_id, "Press Release" %>
-    <%= f.select :press_release_id, options_from_collection_for_select(@press_releases, "id", "title"), :include_blank => true, :class => "text" %>
+    <%= f.collection_select :press_release_id, @press_releases, :id, :title, :include_blank => true, :class => "text" %>
   </div>
   
   <div class="notes">
