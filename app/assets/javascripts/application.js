@@ -8,7 +8,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.tokeninput
-//= require jquery.tablesorter
 //= require modernizer-2.0.6
 //= require_self
 //= require_tree .
