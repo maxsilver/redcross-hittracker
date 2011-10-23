@@ -29,4 +29,14 @@ class Hit < ActiveRecord::Base
   def self.latest
     order("reported_on ASC").last
   end
+  
+  def self.latest_reported_on
+    return latest.reported_on if latest
+    Date.today
+  end
+  
+  def self.earliest_reported_on
+    return earliest.reported_on if earliest
+    Date.today
+  end
 end
