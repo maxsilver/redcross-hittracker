@@ -9,7 +9,7 @@
     <th class="media_outlet">Media Outlet</th>
     <th class="chapter">Chapter</th>
     <th class="reported_on">Reported On</th>
-    <th class="tags"></th>
+    <th class="tags" colspan="2">Tags</th>
   </thead>
   <tbody>
 
@@ -35,7 +35,7 @@
       <td><%= link_to hit.media_outlet.name, hit.media_outlet %></td>
       <td><%= link_to hit.chapter.name, hit.chapter %></td>
       <td><%= hit.reported_on %></td>
-      <td><%= hit.tag_list %></td>
+      <td colspan="2"><%= hit.tag_list %></td>
     </tr>
     <% end %>
 
