@@ -31,7 +31,11 @@
       <td><%= link_to hit.media_outlet.name, hit.media_outlet %></td>
       <td><%= link_to hit.chapter.name, hit.chapter %></td>
       <td><%= hit.reported_on %></td>
-      <td colspan="2"><%= hit.tag_list %></td>
+      <td colspan="2">
+        <% hit.tags.each do |tag| %>
+          <%= link_to tag, hits_path("hit[tags]" => tag.name, :commit => "Search") %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
 
