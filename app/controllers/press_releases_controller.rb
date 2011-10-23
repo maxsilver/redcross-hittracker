@@ -1,5 +1,6 @@
 class PressReleasesController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :require_admin!, :only => [:destroy]
   
   respond_to :json, :html
   
@@ -15,6 +16,15 @@ class PressReleasesController < ApplicationController
     @press_release = current_user.press_releases.build
   end
   
+  def create
+    @press_release = PressRelease.new(params[:press_release])
+    if @press_release.save
+      redirect_to press_releases_path, :notice => "Created successully!"
+    else
+      render action: "new"
+    end
+  end
+  
   def edit
     @press_release = PressRelease.find(params[:id])
   end
@@ -25,15 +35,6 @@ class PressReleasesController < ApplicationController
       redirect_to press_releases_path, :notice => "Updated successully!"
     else
       render action: "edit"
-    end
-  end
-  
-  def create
-    @press_release = PressRelease.new(params[:press_release])
-    if @press_release.save
-      redirect_to press_releases_path, :notice => "Created successully!"
-    else
-      render action: "new"
     end
   end
 

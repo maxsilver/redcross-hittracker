@@ -1,5 +1,6 @@
 class ReportersController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :require_admin!, :only => [:destroy]
   
   respond_to :json, :html
   
@@ -15,6 +16,15 @@ class ReportersController < ApplicationController
     @reporter = current_user.reporters.build
   end
   
+  def create
+    @reporter = Reporter.new(params[:reporter])
+    if @reporter.save
+      redirect_to media_path, :notice => "Created successully!"
+    else
+      render action: "new"
+    end
+  end
+  
   def edit
     @reporter = Reporter.find(params[:id])
   end
@@ -25,15 +35,6 @@ class ReportersController < ApplicationController
       redirect_to media_path, :notice => "Updated successully!"
     else
       render action: "edit"
-    end
-  end
-  
-  def create
-    @reporter = Reporter.new(params[:reporter])
-    if @reporter.save
-      redirect_to media_path, :notice => "Created successully!"
-    else
-      render action: "new"
     end
   end
   

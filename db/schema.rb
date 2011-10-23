@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022174649) do
+ActiveRecord::Schema.define(:version => 20111023024521) do
 
   create_table "chapters", :force => true do |t|
     t.string   "name"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20111022174649) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.boolean  "receive_notifications",                 :default => false
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

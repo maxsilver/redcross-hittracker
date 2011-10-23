@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_user, :only => [:edit, :update, :destroy]
-  before_filter :new_user, :only => [:new, :index]
-  before_filter :all_users, :only => [:new, :index]
+  before_filter :require_admin!, :only => [:new, :create, :edit, :update, :delete]
 
   def index
     @users = User.all
@@ -10,17 +8,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-  end
-
-  def update
-    if @user.update_attributes(params[:user])
-      redirect_to users_path, :notice => "Updated successully!"
-    else
-      render action: "edit", :error => "Could not update the user."
-    end
-  end
-
-  def edit
   end
 
   def create
@@ -33,21 +20,22 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user.destroy
-    redirect_to users_path
-  end
-
-private
-  def find_user
+  def edit
     @user = User.find(params[:id])
   end
 
-  def new_user
-    @user = User.new
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to users_path, :notice => "Updated successully!"
+    else
+      render action: "edit", :error => "Could not update the user."
+    end
   end
 
-  def all_users
-    @users = User.all
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
 end

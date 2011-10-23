@@ -2,7 +2,9 @@
   <% if user.new_record? %>
     <h2>Add a User</h2>
   <% else %>
-    <%= link_to "Delete this User", user, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% if current_user.admin? %>
+      <%= link_to "Delete this User", user, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% end %>
     <h2>Edit this User</h2>
   <% end %>
 
@@ -19,8 +21,13 @@
   </div>
 
   <div class="notifications">
-    <%= f.label :receive_notifications, "Send this user an email each time a media hit is added."%>
     <%= f.check_box :receive_notifications %>
+    <%= f.label :receive_notifications, "Send this user an email each time a media hit is added."%>
+  </div>
+
+  <div class="admin">
+    <%= f.check_box :admin %>
+    <%= f.label :admin, "Administrator"%>
   </div>
 
   <div class="actions">

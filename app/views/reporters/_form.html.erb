@@ -2,7 +2,9 @@
   <% if reporter.new_record? %>
     <h2>Add a Reporter</h2>
   <% else %>
-    <%= link_to "Delete this Reporter", reporter, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% if current_user.admin? %>
+      <%= link_to "Delete this Reporter", reporter, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% end %>
     <h2>Edit this Reporter</h2>
   <% end %>
 

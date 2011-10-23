@@ -2,7 +2,9 @@
   <% if hit.new_record? %>
     <h2>Add a Hit</h2>
   <% else %>
-    <%= link_to "Delete this Hit", hit, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% if current_user.admin? %>
+      <%= link_to "Delete this Hit", hit, :method => "delete", :confirm => "Are you sure?", :class => "delete" %>
+    <% end %>
     <h2>Edit this Hit</h2>
   <% end %>
 
@@ -22,12 +24,12 @@
   
   <div class="media_outlet">
     <%= f.label :media_outlet_id %>
-    <%= f.collection_select :media_outlet_id, @media_outlets, :id, :name, :include_blank => true %>
+    <%= f.collection_select :media_outlet_id, media_outlet_options, :id, :name, :include_blank => true %>
   </div>
   
   <div class="reporter">
     <%= f.label :reporter_id %>
-    <%= f.collection_select :reporter_id, @reporters, :id, :name, :include_blank => true %>
+    <%= f.collection_select :reporter_id, reporter_options, :id, :name, :include_blank => true %>
   </div>
   
   <div class="content">
@@ -47,12 +49,12 @@
   
   <div class="chapter">
     <%= f.label :chapter_id %>
-    <%= f.collection_select :chapter_id, @chapters, :id, :name, :include_blank => true, :class => "text" %>
+    <%= f.collection_select :chapter_id, chapter_options, :id, :name, :include_blank => true, :class => "text" %>
   </div>
 
   <div class="press_release">
     <%= f.label :press_release_id, "Press Release" %>
-    <%= f.collection_select :press_release_id, @press_releases, :id, :title, :include_blank => true, :class => "text" %>
+    <%= f.collection_select :press_release_id, press_release_options, :id, :title, :include_blank => true, :class => "text" %>
   </div>
   
   <div class="notes">

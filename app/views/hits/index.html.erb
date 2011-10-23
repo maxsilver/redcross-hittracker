@@ -12,9 +12,9 @@
     <%= form_for :hit, :method => :get do |f| %>
     <tr class="filters">
       <td class="title"><%= f.text_field :title_contains, :placeholder => "All Hits" %></td>
-      <td class="reporter"><%= f.select :reporter_id_equals, options_from_collection_for_select(@reporters, 'id', 'name'), :include_blank => true %></td>
-      <td class="media_outlet"><%= f.select :media_outlet_id_equals, options_from_collection_for_select(@media_outlets, 'id', 'name'), :include_blank => true %></td>
-      <td class="chapter"><%= f.select :chapter_id_equals, options_from_collection_for_select(@chapters, 'id', 'name'), :include_blank => true %></td>
+      <td class="reporter"><%= f.collection_select :reporter_id_equals, reporter_options, :id, :name, :include_blank => true %></td>
+      <td class="media_outlet"><%= f.collection_select :media_outlet_id_equals, media_outlet_options, :id, :name, :include_blank => true %></td>
+      <td class="chapter"><%= f.collection_select :chapter_id_equals, chapter_options, :id, :name, :include_blank => true %></td>
       <td class="reported_on">
         <%= f.text_field :reported_on_greater_than_or_equal_to, :class => "start_on" %> -
         <%= f.text_field :reported_on_less_than_or_equal_to, :class => "end_on" %>

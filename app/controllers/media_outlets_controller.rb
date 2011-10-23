@@ -1,5 +1,6 @@
 class MediaOutletsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :require_admin!, :only => [:destroy]
   
   respond_to :json, :html
   
@@ -15,6 +16,15 @@ class MediaOutletsController < ApplicationController
     @media_outlet = current_user.media_outlets.build
   end
   
+  def create
+    @media_outlet = MediaOutlet.new(params[:media_outlet])
+    if @media_outlet.save
+      redirect_to media_path, :notice => "Created successully!"
+    else
+      render action: "new"
+    end
+  end
+  
   def edit
     @media_outlet = MediaOutlet.find(params[:id])
   end
@@ -25,15 +35,6 @@ class MediaOutletsController < ApplicationController
       redirect_to media_path, :notice => "Updated successully!"
     else
       render action: "edit"
-    end
-  end
-  
-  def create
-    @media_outlet = MediaOutlet.new(params[:media_outlet])
-    if @media_outlet.save
-      redirect_to media_path, :notice => "Created successully!"
-    else
-      render action: "new"
     end
   end
 
