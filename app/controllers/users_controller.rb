@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    params[:user].delete(:password) if params[:user][:password].blank?
     if @user.update_attributes(params[:user])
       redirect_to users_path, :notice => "Updated successully!"
     else
