@@ -45,11 +45,11 @@
 
 
 <% if @hits && @hits.length == 0 %>
-  <strong>
+  <p class="missing_message"><strong>
     <% if params[:hit] %>
-      Sorry, no hits with those search parameters to display
+      Sorry, there are no media hits within those search parameters.
     <% else %>
-      Sorry, no hits currently in the system. Perhaps you would like to <%= link_to "make a hit", new_hit_path %>?
+      Sorry, there are no media hits currently in the system. Would like to <%= link_to "add one", new_hit_path %>?
     <% end %>
-  </strong>
+  </strong></p>
 <% end %>
