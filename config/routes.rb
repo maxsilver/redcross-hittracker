@@ -3,7 +3,11 @@ HitTracker::Application.routes.draw do
   resources :users
   match 'profile' => 'users#profile', :as => "profile"
 
-  resources :hits
+  resources :hits do
+    member do 
+      get :duplicate
+    end
+  end
 
   match 'media' => "media#index"
   resources :reporters
