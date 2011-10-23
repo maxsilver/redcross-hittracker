@@ -1,18 +1,18 @@
-<%= form_for chapter do |f| %>
+<%= form_for chapter, :html => { :class => "chapter" } do |f| %>
+  <h2>Add a Chapter</h2>
 
   <div class="errors">
-    <%= chapter.errors.full_messages %>
+    <%= chapter.errors.full_messages if chapter.errors.any? %>
   </div>
   
   <%= f.hidden_field :region_id %>
   
-  <div>
-    <%= f.label :name %><br />
+  <div class="name">
+    <%= f.label :name %>
     <%= f.text_field :name, :class => "title" %>
   </div>
   
-  <div>
-    <%= link_to "cancel", locations_path %>
+  <div class="actions">
     <%= f.submit "Save" %>
   </div>
 <% end %>

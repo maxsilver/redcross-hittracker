@@ -8,7 +8,7 @@ form
   padding: 20px 40px
   background-color: #ccc
   
-  input[type=text], select
+  input[type=text], input[type=password], select
     width: 100%
 
   textarea
@@ -47,3 +47,24 @@ form.reporter
     +column(9)
   .comment
     clear: both
+
+form.media_outlet
+  .name, .contact_name
+    +column(9)
+  .media_type, .contact_phone
+    +push(1)
+    +column(9)
+
+form.press_release
+  .title
+    +column(9)
+  .released_on
+    +push(1)
+    +column(9)
+
+form.user
+  .email
+    +column(9)
+  .password
+    +push(1)
+    +column(9)

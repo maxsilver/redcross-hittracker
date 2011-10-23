@@ -1,23 +1,23 @@
-<%= form_for press_release do |f| %>
+<%= form_for press_release, :html => { :class => "press_release" } do |f| %>
+  <h2>Add a Press Release</h2>
 
   <div class="errors">
-    <%= press_release.errors.full_messages %>
+    <%= press_release.errors.full_messages if press_release.errors.any? %>
   </div>
   
   <%= f.hidden_field :user_id, :value => current_user.id %>
   
-  <div>
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :class => "title" %>
+  <div class="title">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
   
-  <div>
-    <%= f.label :released_on %><br />
-    <%= f.text_field :released_on, :class => "released_on text" %>
+  <div class="released_on">
+    <%= f.label :released_on %>
+    <%= f.text_field :released_on %>
   </div>
   
-  <div>
-    <%= link_to "cancel", press_releases_path %>
+  <div class="actions">
     <%= f.submit "Save" %>
   </div>
 <% end %>

@@ -1,33 +1,33 @@
-<%= form_for media_outlet do |f| %>
+<%= form_for media_outlet, :html => { :class => "media_outlet" } do |f| %>
+  <h2>Add a Media Outlet</h2>
 
   <div class="errors">
-    <%= media_outlet.errors.full_messages %>
+    <%= media_outlet.errors.full_messages if media_outlet.errors.any? %>
   </div>
   
   <%= f.hidden_field :user_id, :value => current_user.id %>
   
-  <div>
-    <%= f.label :name %><br />
+  <div class="name">
+    <%= f.label :name %>
     <%= f.text_field :name, :class => "title" %>
   </div>
   
-  <div>
-    <%= f.label :media_type %><br />
+  <div class="media_type">
+    <%= f.label :media_type %>
     <%= f.text_field :media_type, :class => "title" %>
   </div>
   
-  <div>
-    <%= f.label :contact_name %><br />
+  <div class="contact_name">
+    <%= f.label :contact_name %>
     <%= f.text_field :contact_name, :class => "title" %>
   </div>
   
-  <div>
-    <%= f.label :contact_phone %><br />
+  <div class="contact_phone">
+    <%= f.label :contact_phone %>
     <%= f.text_field :contact_phone, :class => "title" %>
   </div>
   
-  <div>
-    <%= link_to "cancel", media_path %>
+  <div class="actions">
     <%= f.submit "Save" %>
   </div>
 <% end %>

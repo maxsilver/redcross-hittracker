@@ -1,22 +1,24 @@
-<%= form_for user do |f| %>
-  <% @user.errors.full_messages.each do |error| %>
-    <%= error %><br>
-  <% end %>
+<%= form_for user, :html => { :class => "user" } do |f| %>
+  <h2>Add a User</h2>
 
-  <div>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => "email text" %>
+  <%= user.errors.full_messages if user.errors.any? %>
+
+  <div class="email">
+    <%= f.label :email %>
+    <%= f.text_field :email, :autocomplete => "off" %>
   </div>
 
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, :class => "password text" %>
+  <div class="password">
+    <%= f.label :password %>
+    <%= f.password_field :password, :autocomplete => "off" %>
   </div>
 
-  <div>
-    <%= f.label :receive_notifications, "Send me an email when a new Hit is being tracked."%><br />
+  <div class="notifications">
+    <%= f.label :receive_notifications, "Send me an email when a new Hit is being tracked."%>
     <%= f.check_box :receive_notifications %>
   </div>
 
-  <%= f.submit submit_action %>
+  <div class="actions">
+    <%= f.submit submit_action %>
+  </div>
 <% end %>
