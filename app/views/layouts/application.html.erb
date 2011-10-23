@@ -12,21 +12,21 @@
       <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
       <h1>Media Hit Tracker</h1>
       <% if user_signed_in? %>
-        <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <%= link_to current_user.email, profile_path %></p>
+        <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <%= link_to current_user.name, profile_path %></p>
       <% end %>
     </header>
-    
+
     <% if user_signed_in? %>
       <%= render :partial => "shared/navigation" %>
     <% end %>
-    
+
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
     <% end %>
-    <% if alert.present? %>      
+    <% if alert.present? %>
       <p class="alert"><strong>Alert:</strong> <%= alert %></p>
     <% end %>
-    
+
     <%= yield %>
   </div>
 </body>
