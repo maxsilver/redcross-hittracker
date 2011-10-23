@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
 private
   def require_admin!
-    redirect_to :back, :alert => "Only administrators have access to perform that task."
+    unless current_user.admin?
+      redirect_to :back, :alert => "Only administrators have access to perform that task."
+    end
   end
 end
