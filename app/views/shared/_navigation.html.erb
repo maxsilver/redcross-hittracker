@@ -21,7 +21,7 @@
     <%= link_to "Locations", locations_path, :class => "title #{menu_is_selected('/locations')}" %>
     <%= link_to "+", new_chapter_path, :class => "new" %>
   </div>
-  <div>
+  <div class="users <%= "non-admin" unless current_user.admin? %>">
     <%= link_to "Users", users_path, :class => "title #{menu_is_selected('/users')}" %>
     <%= link_to "+", new_user_path, :class => "new" %>
   </div>
