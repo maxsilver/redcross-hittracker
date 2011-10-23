@@ -19,6 +19,10 @@ class HitsController < ApplicationController
     
     respond_to :html, :csv
   end
+  
+  def show
+    @hit = Hit.find params[:id]
+  end
 
   def new
     @hit = Hit.new

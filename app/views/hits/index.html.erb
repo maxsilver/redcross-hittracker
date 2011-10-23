@@ -1,7 +1,3 @@
-<% if current_user.admin? %>
-<%= link_to "Download CSV", hits_path(:format => :csv) %><br />
-<% end %>
-
 <table class="hits">
   <thead>
     <th class="title">Title</th>
@@ -52,4 +48,11 @@
       Sorry, there are no media hits currently in the system. Would like to <%= link_to "add one", new_hit_path %>?
     <% end %>
   </strong></p>
+<% end %>
+
+
+<% if @hits && @hits.length != 0 %>
+  <% if current_user.admin? %>
+  <p class="download"><%= link_to "Download these results (CSV)", hits_path(:format => :csv) %><br /></p>
+  <% end %>
 <% end %>

@@ -1,0 +1,37 @@
+<h2>Media Hit:  <%= @hit.title %></h2>
+
+<div class="reported_on">
+  Reported on <%= @hit.reported_on %>
+</div>
+
+<div class="media_outlet">
+  Reported by <%= @hit.media_outlet.name %>
+</div>
+
+<div class="reporter">
+  Authored by <%= @hit.reporter.name %>
+</div>
+
+<div class="content">
+  <%= @hit.content %>
+</div>
+
+<div class="tags">
+  <%= @hit.tags.join(", ") %>
+</div>
+
+<div class="tone">
+  Tone: <%= @hit.tone %>
+</div>
+
+<div class="chapter">
+  Chapter: <%= @hit.chapter.name %>
+</div>
+
+<div class="press_release">
+  Press Release: <%= @hit.press_release.title %>
+</div>
+
+<div class="notes">
+  Notes:<br /><%= @hit.notes %>
+</div>
