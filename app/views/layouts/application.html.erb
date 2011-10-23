@@ -12,7 +12,7 @@
       <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
       <h1>Media Hit Tracker</h1>
       <% if user_signed_in? %>
-        <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <%= link_to "Profile", profile_path %></p>
+        <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <%= link_to current_user.email, profile_path %></p>
       <% end %>
     </header>
     
