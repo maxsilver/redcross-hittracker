@@ -8,9 +8,9 @@
   <tr class="<%= cycle :even, :odd %>">
     <td>
       <% if current_user.admin? %>
-        <%= link_to user.name, edit_user_path(user) %>
+        <%= link_to name_of(user), edit_user_path(user) %>
       <% else %>
-        <%= user.name %>
+        <%= name_of(user) %>
       <% end %>
     </td>
     <td><%= mail_to user.email %></td>
