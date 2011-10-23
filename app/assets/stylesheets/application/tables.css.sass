@@ -85,11 +85,7 @@ table.users
         input
           width: 924px
 
-table.reporters, table.media_outlets
-  +float-left
-  width: 465px
-
-
+table.reporters, table.media_outlets, table.press_releases, table.locations
   thead
     th
       padding: 10px
@@ -98,6 +94,13 @@ table.reporters, table.media_outlets
         +border-radius(5px 0 0 5px)
       &:last-child
         +border-radius(0 5px 5px 0)
+
+table.reporters, table.media_outlets
+  +float-left
+  width: 465px
+
+
+  
   
   th
     &.title
