@@ -18,6 +18,11 @@
     <%= f.label :password %>
     <%= f.password_field :password, :autocomplete => "off" %>
   </div>
+  
+  <div class="password_confirmation">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :autocomplete => "off" %>
+  </div>
 
   <div class="notifications">
     <%= f.check_box :receive_notifications %>
