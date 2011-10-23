@@ -24,7 +24,7 @@
       </tbody>
     </table>
     <br /><br />
-    <%= link_to "See All Media Hits about '#{@chapter.name}'", hits_path("hit[chapter_id_equals]" => @chapter.id) %>
+    <%= link_to "See All Media Hits about '#{@chapter.name}'", hits_path("hit[chapter_id_equals]" => @chapter.id, :commit => "Search") %>
   <% else %>
     <span>No recent media hits for this chapter</span>
   <% end %>

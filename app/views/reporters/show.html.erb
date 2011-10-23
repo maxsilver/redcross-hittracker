@@ -31,7 +31,7 @@
       </tbody>
     </table>
     <br /><br />
-    <%= link_to "See All Media Hits by '#{@reporter.name}'", hits_path("hit[reporter_id_equals]" => @reporter.id) %>
+    <%= link_to "See All Media Hits by '#{@reporter.name}'", hits_path("hit[reporter_id_equals]" => @reporter.id, :commit => "Search") %>
   <% else %>
     <span>No recent media hits from this reporter</span>
   <% end %>
