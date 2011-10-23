@@ -1,23 +1,19 @@
+<div class="location_filter">
+  <%= form_for :locations do |f| %>
+    <h2>Filter Hits Reported On</h2>
+    <%= text_field_tag :start_date, @start_date.strftime("%Y-%m-%d"), :class => "datetime" %>
+    <%= text_field_tag :end_date, @end_date.strftime("%Y-%m-%d"), :class => "datetime" %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
+
 <table class="locations">
   <thead>
     <tr>
-      <th class="location">Locations</th>
-      <th class="hits" colspan="2">Hits</th>
+      <th class="name">Location</th>
+      <th class="count">Hits</th>
     </tr>
   </thead>
-  <tbody>
-    <%= form_for :locations do |f| %>
-    <tr class="filters">
-      <td>&nbsp;</td>
-      <td class="start_date"><%= text_field_tag :start_date, @start_date.strftime("%Y-%m-%d"), :class => "datetime" %></td>
-      <td class="end_date"><%= text_field_tag :end_date, @end_date.strftime("%Y-%m-%d"), :class => "datetime" %></td>
-      <td><%= f.submit "Search" %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table class="locations">
   <tbody>
     <% @regions.each do |region| %>
     <tr class="region">
