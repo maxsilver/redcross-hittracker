@@ -8,7 +8,6 @@
     <li>Fax : <%= @reporter.fax %></li>
     <li>Comment : <%= @reporter.comment %></li>
   </ul>
-
   <br /><br />
 
   <h4>Recent Media Hits</h4>
@@ -18,7 +17,6 @@
       <th class="details">Details</th>
     </thead>
     <tbody>
-
       <% @reporter.hits.most_recent.each do |hit| %>
       <tr class="<%= cycle :even, :odd %>">
         <td><%= link_to hit.title, edit_hit_path(hit) %></td>
@@ -29,18 +27,10 @@
         </td>
       </tr>
       <% end %>
-
     </tbody>
-
   </table>
-
-
-
-
-
-
-
-
+  <br /><br />
+  <%= link_to "See All Media Hits by '#{@reporter.name}'", hits_path("hit[reporter_id_equals]" => @reporter.id) %>
 </div>
 
 <div class="right sidebar">
