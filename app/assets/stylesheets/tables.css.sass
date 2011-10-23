@@ -5,18 +5,12 @@ table.press_releases, table.users, table.reporters, table.media_outlets
     &.filters
       background-color: #d1c99d
       td
-        &:first-child
-          +border-radius(5px 0 0 5px)
-        &:last-child
-          +border-radius(0 5px 5px 0)
+        +border-radius(5px)
     &.odd
       background-color: #efefef
     td
       padding: 10px
-      &:first-child
-        +border-radius(3px 0 0 3px)
-      &:last-child
-        +border-radius(0 3px 3px 0)
+      +border-radius(3px)
 
 table.press_releases
   th
@@ -39,7 +33,17 @@ table.press_releases
         input
           width: 208px
 
+.location_filter form
+  input[type=text]
+    width: 200px
+  
+
 table.locations
+  width: 100%
+  
+  thead tr th.count
+    text-align: right
+  
   tr
     &.filters
       background-color: #d1c99d
@@ -63,7 +67,6 @@ table.locations
     &.odd
       background-color: lighten(#d1c99d, 20%)
     td
-      padding: 10px
       &:first-child
         +border-radius(3px 0 0 3px)
       &:last-child

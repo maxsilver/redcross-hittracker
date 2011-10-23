@@ -5,14 +5,6 @@
     <th class="tags">Tags</th>
   </thead>
   <tbody>
-    <tr class="filters">
-      <td class="title"><%= text_field_tag :title, nil, :placeholder => "All Press Releases" %></td>
-      <td class="released_on">
-        <%= text_field_tag :start_on, first_press_release_date, :class => "start_on" %> -
-        <%= text_field_tag :end_on, last_press_release_date, :class => "end_on" %>
-      </td>
-      <td class="tags"><%= text_field_tag :tags, nil, :placeholder => "All Tags" %></td>
-    </tr>
     <% @press_releases.each do |press_release| %>
     <tr class="<%= cycle :even, :odd %>">
       <td><%= link_to press_release.title, edit_press_release_path(press_release) %></td>
