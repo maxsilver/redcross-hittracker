@@ -1,0 +1,39 @@
+@import "compass"
+@import "blueprint"
+
+a
+  color: #ff0000
+a:hover
+  text-decoration: none
+a:active
+  color: #ee0000
+
+.sessions.new, .passwords.new
+  form
+    clear: both    
+    +column(10)
+    +push(5)
+    margin-top: 40px
+    input[type=email], input[type="password"]
+      height: 20px
+      width: 100%
+    .password
+      margin-top: 20px
+    .remember_me
+      margin-top: 20px
+      input[type=checkbox]
+        float: left
+        margin-right: 10px
+    .actions
+      span
+        float: left
+        margin-right: 20px
+      input
+        float: right
+
+.passwords.new
+  input[type=submit]
+    margin: 10px 0
+    float: right
+  p
+    clear: both

@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
   <div class="container">
     <header>
       <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
@@ -17,8 +17,13 @@
     <%= render :partial => "shared/navigation" %>
     <% end %>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>      
+      <p class="alert"><strong>Alert:</strong> <%= alert %></p>
+    <% end %>
+    
     <%= yield %>
   </div>
 </body>
