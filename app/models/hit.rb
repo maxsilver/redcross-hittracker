@@ -7,7 +7,6 @@ class Hit < ActiveRecord::Base
   validates :media_outlet, :presence => true
   validates :chapter, :presence => true
 
-  default_scope where(:deleted_at => nil)
   scope :during, lambda {|date_range| where(:reported_on => date_range)}
   scope :with_reporter, lambda { |reporter_id| where(:reporter_id => reporter_id)}
   scope :with_media_outlet, lambda { |media_outlet_id| where(:media_outlet => media_outlet_id )}
