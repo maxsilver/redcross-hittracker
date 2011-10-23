@@ -9,7 +9,7 @@
   <tbody>
     <% @chapters.each do |chapter| %>
     <tr>
-      <td><%= link_to chapter.name, edit_chapter_path(chapter) %></td>
+      <td><%= link_to chapter.name, chapter_path(chapter) %> (<%= link_to "edit", edit_chapter_path(chapter) %>)</td>
       <td><%= chapter.updated_at %></td>
       <td><%= chapter.created_at %></td>
     </tr>
