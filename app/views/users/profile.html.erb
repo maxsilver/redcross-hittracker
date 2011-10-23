@@ -3,6 +3,12 @@
 
   <%= @user.errors.full_messages if @user.errors.any? %>
 
+
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
   <div class="email">
     <%= f.label :email %>
     <%= f.text_field :email, :autocomplete => "off" %>
@@ -11,6 +17,11 @@
   <div class="password">
     <%= f.label :password %>
     <%= f.password_field :password, :autocomplete => "off" %>
+  </div>
+  
+  <div class="password_confirmation">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :autocomplete => "off" %>
   </div>
 
   <div class="notifications">

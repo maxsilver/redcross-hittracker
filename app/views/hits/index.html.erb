@@ -1,4 +1,6 @@
-<%= link_to "Download CSV", hits_path(:format => :csv) %>
+<% if current_user.admin? %>
+<%= link_to "Download CSV", hits_path(:format => :csv) %><br />
+<% end %>
 
 <table class="hits">
   <thead>
