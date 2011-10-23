@@ -7,17 +7,17 @@ form
   +column(20)
   padding: 20px 40px
   background-color: #ccc
-  
+
   input[type=text], input[type=password], select
     width: 100%
 
   textarea
     width: 95%
     height: 100px
-  
+
   h2
     margin-bottom: 20px
-    
+
   .delete
     +float-right
 
@@ -25,7 +25,7 @@ form
     font-weight: bold
     display:  block
     margin-bottom: 5px
-    
+
   .actions
     margin-top: 20px
     float: right
@@ -74,3 +74,14 @@ form.user
   .notifications, .admin
     label
       display: inline
+
+
+
+.sidebar form
+  width: 100%
+  .email, .fax
+    +push(0)
+  input, textarea
+    width: 80%
+
+

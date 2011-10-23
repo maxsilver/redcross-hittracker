@@ -1,20 +1,26 @@
-<h3><strong><%= @reporter.name %></strong></h3>
-<%= link_to "Edit this reporter", edit_reporter_path(@reporter) %>
+<div class="left">
+  <h3><strong><%= @reporter.name %></strong></h3>
+  <%= link_to "Edit this reporter", edit_reporter_path(@reporter) %>
 
-<br /><br />
+  <br /><br />
 
-<ul>
-  <li>Phone : <%= @reporter.phone %></li>
-  <li>Email : <%= @reporter.email %></li>
-  <li>Fax : <%= @reporter.fax %></li>
-  <li>Comment : <%= @reporter.comment %></li>
-</ul>
+  <ul>
+    <li>Phone : <%= @reporter.phone %></li>
+    <li>Email : <%= @reporter.email %></li>
+    <li>Fax : <%= @reporter.fax %></li>
+    <li>Comment : <%= @reporter.comment %></li>
+  </ul>
 
-<br /><br />
+  <br /><br />
 
-<h4>Media Hits</h4>
-<ul>
-  <% @reporter.hits.each do |hit| %>
-    <li><%= link_to hit.title, hit %></li>
-  <% end %>
-</ul>
+  <h4>Media Hits</h4>
+  <ul>
+    <% @reporter.hits.each do |hit| %>
+      <li><%= link_to hit.title, hit %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="right sidebar">
+  <%= render :partial => "form", :locals => { :reporter => @reporter } %>
+</div>
