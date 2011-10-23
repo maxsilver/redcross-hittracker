@@ -16,6 +16,8 @@ class HitsController < ApplicationController
     else
       @hits = Hit.all
     end
+    
+    respond_to :html, :csv
   end
 
   def new

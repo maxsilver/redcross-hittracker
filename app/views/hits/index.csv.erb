@@ -1,0 +1,9 @@
+<%=
+require 'csv'
+csv_string = CSV.generate do |csv|
+  csv << ["title", "reporter", "media_outlet", "press_release", "author", "chapter", "reported_on", "tone", "notes", "created_at"]
+  @hits.each do |hit|
+    csv << [hit.title, hit.reporter.name, hit.media_outlet.name, hit.press_release.title, hit.user.name, hit.chapter.name, hit.reported_on, hit.tone, hit.notes, hit.created_at]
+  end
+end
+%>
