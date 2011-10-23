@@ -1,5 +1,9 @@
 <%= form_for hit, :html => { :class => "hit" } do |f| %>
-  <h2>Add a Hit</h2>
+  <% if hit.new_record? %>
+    <h2>Add a Hit</h2>
+  <% else %>
+    <h2>Edit this Hit</h2>
+  <% end %>
 
   <div class="errors">
     <%= hit.errors.full_messages if hit.errors.any? %>

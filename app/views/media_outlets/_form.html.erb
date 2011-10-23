@@ -1,5 +1,9 @@
 <%= form_for media_outlet, :html => { :class => "media_outlet" } do |f| %>
-  <h2>Add a Media Outlet</h2>
+  <% if media_outlet.new_record? %>
+    <h2>Add a Media Outlet</h2>
+  <% else %>
+    <h2>Edit this Media Outlet</h2>
+  <% end %>
 
   <div class="errors">
     <%= media_outlet.errors.full_messages if media_outlet.errors.any? %>

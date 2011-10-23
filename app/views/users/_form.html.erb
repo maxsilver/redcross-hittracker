@@ -1,5 +1,9 @@
 <%= form_for user, :html => { :class => "user" } do |f| %>
-  <h2>Add a User</h2>
+  <% if user.new_record? %>
+    <h2>Add a User</h2>
+  <% else %>
+    <h2>Edit this User</h2>
+  <% end %>
 
   <%= user.errors.full_messages if user.errors.any? %>
 

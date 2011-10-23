@@ -1,5 +1,9 @@
 <%= form_for chapter, :html => { :class => "chapter" } do |f| %>
-  <h2>Add a Chapter</h2>
+  <% if chapter.new_record? %>
+    <h2>Add a Chapter</h2>
+  <% else %>
+    <h2>Edit this Chapter</h2>
+  <% end %>
 
   <div class="errors">
     <%= chapter.errors.full_messages if chapter.errors.any? %>

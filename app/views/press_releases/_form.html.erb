@@ -1,5 +1,9 @@
 <%= form_for press_release, :html => { :class => "press_release" } do |f| %>
-  <h2>Add a Press Release</h2>
+  <% if press_release.new_record? %>
+    <h2>Add a Press Release</h2>
+  <% else %>
+    <h2>Edit this Press Release</h2>
+  <% end %>
 
   <div class="errors">
     <%= press_release.errors.full_messages if press_release.errors.any? %>

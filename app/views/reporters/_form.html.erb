@@ -1,5 +1,9 @@
 <%= form_for reporter, :html => { :class => "reporter" } do |f| %>
-  <h2>Add a Reporter</h2>
+  <% if reporter.new_record? %>
+    <h2>Add a Reporter</h2>
+  <% else %>
+    <h2>Edit this Reporter</h2>
+  <% end %>
 
   <div class="errors">
     <%= reporter.errors.full_messages if reporter.errors.any? %>
