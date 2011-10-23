@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
   has_many :reporters
   has_many :media_outlets
 
+  def role
+    if admin?
+      "Admin"
+    else
+      "User"
+    end
+  end
 end
