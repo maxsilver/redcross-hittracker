@@ -25,12 +25,14 @@
     <%= f.label :receive_notifications, "Send this user an email each time a media hit is added."%>
   </div>
 
-  <div class="admin">
-    <%= f.check_box :admin %>
-    <%= f.label :admin, "Administrator"%>
-  </div>
+  <% if current_user.admin? %>
+    <div class="admin">
+      <%= f.check_box :admin %>
+      <%= f.label :admin, "Administrator"%>
+    </div>
+  <% end %>
 
   <div class="actions">
-    <%= f.submit submit_action %>
+    <%= f.submit "Save" %>
   </div>
 <% end %>

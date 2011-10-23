@@ -1,6 +1,7 @@
 HitTracker::Application.routes.draw do
   devise_for :users
   resources :users
+  match 'profile' => 'users#profile', :as => "profile"
 
   resources :hits
 

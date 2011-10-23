@@ -38,4 +38,15 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
+  
+  def profile
+    @user = current_user
+    if request.put?
+      if @user.update_attributes(params[:user])
+        redirect_to users_path, :notice => "Updated successully!"
+      else
+        render action: "profile", :error => "Could not update your profile."
+      end
+    end
+  end
 end

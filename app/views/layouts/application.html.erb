@@ -11,10 +11,12 @@
     <header>
       <%= link_to image_tag("logo.gif", :class => "logo"), root_path %>
       <h1>Media Hit Tracker</h1>
-      <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <a href="#">Profile</a></p>
+      <% if user_signed_in? %>
+        <p><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %> | <%= link_to "Profile", profile_path %></p>
+      <% end %>
     </header>
     
-    <% if current_user %>
+    <% if user_signed_in? %>
       <%= render :partial => "shared/navigation" %>
     <% end %>
     

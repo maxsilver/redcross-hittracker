@@ -1,0 +1,24 @@
+<%= form_for @user, :url => profile_path, :html => { :class => "user" } do |f| %>
+  <h2>Edit your Profile</h2>
+
+  <%= @user.errors.full_messages if @user.errors.any? %>
+
+  <div class="email">
+    <%= f.label :email %>
+    <%= f.text_field :email, :autocomplete => "off" %>
+  </div>
+
+  <div class="password">
+    <%= f.label :password %>
+    <%= f.password_field :password, :autocomplete => "off" %>
+  </div>
+
+  <div class="notifications">
+    <%= f.check_box :receive_notifications %>
+    <%= f.label :receive_notifications, "Send me an email each time a media hit is added."%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+<% end %>
