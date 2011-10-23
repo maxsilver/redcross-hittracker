@@ -1,0 +1,11 @@
+<h3><strong><%= @reporter.name %></strong></h3>
+<%= link_to "Edit this reporter", edit_reporter_path(@reporter) %>
+
+<br />
+<ul>
+  <li>Phone : <%= @reporter.phone %></li>
+  <li>Email : <%= @reporter.email %></li>
+  <li>Fax : <%= @reporter.fax %></li>
+  <li>Comment : <%= @reporter.comment %></li>
+</ul>
+

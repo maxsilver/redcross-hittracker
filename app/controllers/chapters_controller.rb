@@ -1,9 +1,9 @@
 class ChaptersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_admin!, :only => [:destroy]
-  
+
   respond_to :json, :html
-  
+
   def index
     if params[:q]
       respond_with(@chapters = Chapter.where("name like '%#{params[:q]}%'"))
@@ -11,11 +11,11 @@ class ChaptersController < ApplicationController
       respond_with(@chapters = Chapter.all)
     end
   end
-  
+
   def new
     @chapter = Chapter.new(:region_id => Region.first.id)
   end
-  
+
   def create
     @chapter = Chapter.new(params[:chapter])
     if @chapter.save
@@ -24,11 +24,11 @@ class ChaptersController < ApplicationController
       render action: "new"
     end
   end
-  
+
   def edit
     @chapter = Chapter.find(params[:id])
   end
-  
+
   def update
     @chapter = Chapter.find(params[:id])
     if @chapter.update_attributes(params[:chapter])
@@ -36,6 +36,10 @@ class ChaptersController < ApplicationController
     else
       render action: "edit"
     end
+  end
+
+  def show
+    @chapter = Chapter.find(params[:id])
   end
 
   def destroy
