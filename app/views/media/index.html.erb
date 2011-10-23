@@ -1,9 +1,8 @@
 <div class="location_filter">
   <%= form_for :media do |f| %>
-    <h2>Filter Hits Reported On</h2>
     <%= text_field_tag :start_date, @start_date.strftime("%Y-%m-%d"), :class => "datetime" %>
     <%= text_field_tag :end_date, @end_date.strftime("%Y-%m-%d"), :class => "datetime" %>
-    <%= f.submit "Search" %>
+    <%= f.submit "Filter" %>
   <% end %>
 </div>
 
@@ -15,7 +14,7 @@
   <tbody>
     <% @reporters.each do |reporter| %>
     <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to reporter.name, reporter %> (<%= link_to "edit", edit_reporter_path(reporter) %>)</td>
+      <td><%= link_to reporter.name, reporter %></td>
       <td class="hits"><%= reporter.hits.during(@date_range).count %></td>
     </tr>
     <% end %>
@@ -32,7 +31,7 @@
   <tbody>
     <% @media_outlets.each do |media_outlet| %>
     <tr class="<%= cycle :even, :odd %>">
-      <td><%= link_to media_outlet.name, media_outlet %> (<%= link_to "edit", edit_media_outlet_path(media_outlet) %>)</td>
+      <td><%= link_to media_outlet.name, media_outlet %> </td>
       <td class="hits"><%= media_outlet.hits.during(@date_range).count %></td>
     </tr>
     <% end %>
