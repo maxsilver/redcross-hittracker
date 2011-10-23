@@ -4,7 +4,7 @@ HitTracker::Application.routes.draw do
   match 'profile' => 'users#profile', :as => "profile"
 
   resources :hits do
-    member do 
+    member do
       get :duplicate
     end
   end
@@ -12,13 +12,13 @@ HitTracker::Application.routes.draw do
   match 'media' => "media#index"
   resources :reporters
   resources :media_outlets
-  
+
   resources :press_releases
-  
+
   match 'locations' => "locations#index"
   resources :regions
   resources :chapters
-  
+
   resources :tags
 
   root :to => 'hits#index'

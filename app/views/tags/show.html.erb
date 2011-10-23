@@ -1,0 +1,20 @@
+<h2>Things tagged with "<%= @tag.name %>"</h2>
+<br /><br />
+
+
+<h3>Reporters</h3>
+<ul>
+  <% @reporters.each do |reporter| %>
+    <li><%= link_to reporter.name, reporter %></li>
+  <% end %>
+</ul>
+<br /><br />
+
+
+<h3>Hits</h3>
+<ul>
+  <% @hits.each do |hits| %>
+    <li><%= link_to hits.title, hits %></li>
+  <% end %>
+</ul>
+

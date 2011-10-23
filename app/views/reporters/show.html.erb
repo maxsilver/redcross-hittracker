@@ -7,6 +7,12 @@
     <li>Email : <%= @reporter.email %></li>
     <li>Fax : <%= @reporter.fax %></li>
     <li>Comment : <%= @reporter.comment %></li>
+    <li></li>
+    <li>Tags :
+      <% @reporter.tags.each do |tag| %>
+        <%= link_to tag.name, tag_path(tag) %>
+      <% end %>
+    </li>
   </ul>
   <br /><br />
 
