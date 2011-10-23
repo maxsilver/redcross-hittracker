@@ -9,8 +9,8 @@ class MediaController < ApplicationController
       @start_date = Date.parse params[:start_date]
       @end_date   = Date.parse params[:end_date]
     else
-      @start_date = Hit.earliest.reported_on
-      @end_date   = Hit.latest.reported_on
+      @start_date = Hit.earliest.reported_on || Date.today
+      @end_date   = Hit.latest.reported_on || Date.today
     end
     
     @date_range = @start_date..@end_date
